@@ -1,1 +1,1 @@
-# cosmOS
+# astrOS
