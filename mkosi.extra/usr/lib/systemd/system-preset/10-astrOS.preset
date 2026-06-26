@@ -1,1 +1,5 @@
 enable NetworkManager.service
+enable cosmic-greeter.service
+enable bluetooth.service
+enable tuned-ppd.service
+enable systemd-timesyncd.service

@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+# Generate locales
+cat <<EOF >/etc/locale.gen
+en_US.UTF-8 UTF-8
+#de_DE.UTF-8 UTF-8
+EOF
+locale-gen
+
+# Branding
+(
+  . /usr/lib/os-release
+  cat >/usr/lib/os-release <<EOF
+NAME="AstrOS"
+PRETTY_NAME="AstrOS"
+ID="$ID"
+ID_LIKE="astros-$ID"
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://github.com/linux-universe/AstrOS"
+EOF
+)
