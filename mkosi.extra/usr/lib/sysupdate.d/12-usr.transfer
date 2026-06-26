@@ -1,0 +1,17 @@
+[Transfer]
+ProtectVersion=%A
+# during testing only
+Verify=no
+
+[Source]
+Type=url-file
+Path=https://dl.astros-linux.org/
+MatchPattern=%M_@v_%a.usr-%a.@u.raw
+
+[Target]
+Type=partition
+Path=auto
+MatchPattern=%M_@v
+MatchPartitionType=usr
+PartitionFlags=0
+ReadOnly=1
