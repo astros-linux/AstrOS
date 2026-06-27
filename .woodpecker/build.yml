@@ -1,0 +1,10 @@
+when:
+  - event: push
+  - branch: main
+
+steps:
+  - name: build
+    image: docker.io/library/archlinux
+    commands:
+      - pacman -Syu --noconfirm mkosi
+      - mkosi -f -B
