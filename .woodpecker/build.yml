@@ -7,4 +7,12 @@ steps:
     image: docker.io/library/archlinux
     commands:
       - pacman -Syu --noconfirm mkosi
+      - echo "$MKOSI_KEY" > mkosi.key
+      - echo "$MKOSI_CRT" > mkosi.crt
+      - chmod 0600 mkosi.key mkosi.crt
       - mkosi -f -B
+    environment:
+      MKOSI_KEY:
+        from_secret: mkosi.key
+      MKOSI_CRT:
+        from_secret: mkosi.crt
