@@ -1,0 +1,37 @@
+when:
+  - event: push
+    branch: main
+  - event: cron
+    branch: main
+
+steps:
+  - name: build
+    image: docker.io/library/archlinux
+    commands:
+      - pacman -Syu --noconfirm mkosi
+      - printf '%s' "$MKOSI_KEY" > mkosi.key
+      - printf '%s' "$MKOSI_CRT" > mkosi.crt
+      - chmod 0600 mkosi.key mkosi.crt
+      - mkosi -f -B
+    environment:
+      MKOSI_KEY:
+        from_secret: mkosi.key
+      MKOSI_CRT:
+        from_secret: mkosi.crt
+
+  - name: deploy
+    image: docker.io/library/archlinux
+    commands:
+      - pacman -Sy --noconfirm --needed rsync gnupg
+      - rm -f mkosi.output/initrd mkosi.output/initrd.cpio.zst
+      - cd mkosi.output
+      - sha256sum -- AstrOS* > SHA256SUMS
+      - printf '%s' "$GPG_KEY" | gpg --batch --import
+      - gpg --batch --yes --pinentry-mode loopback --detach-sign --armor -o SHA256SUMS.asc SHA256SUMS
+      - cd ..
+      - rsync -aP --delete mkosi.output/ /mnt
+    volumes:
+      - /srv/astros/dl-astros:/mnt:z
+    environment:
+      GPG_KEY:
+        from_secret: gpg_key

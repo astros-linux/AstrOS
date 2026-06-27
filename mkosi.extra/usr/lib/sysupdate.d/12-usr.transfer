@@ -1,7 +1,5 @@
 [Transfer]
 ProtectVersion=%A
-# during testing only
-Verify=no
 
 [Source]
 Type=url-file
