@@ -6,6 +6,8 @@
 
 > [!CAUTION]
 > AstrOS is in **early development and highly unstable**. Expect breaking changes, missing features, and rough edges. Don't run it on a machine you depend on.
+>
+> The **tpm2** is the **only way to unlock your root partition**, so it's highly recommended to always **make backups** of your personal data. (this may change in the future)
 
 ---
 
