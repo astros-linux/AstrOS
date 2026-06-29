@@ -5,7 +5,7 @@
 > [!CAUTION]
 > highly unstable for now
 
-[Download](https://dl.astros-linux.org/latest.raw)
+[Download](https://dl.astros-linux.org/AstrOS_latest_x86-64.raw)
 
 I recommend [caligula](https://github.com/ifd3f/caligula) for writing the .raw image to a USB stick
 

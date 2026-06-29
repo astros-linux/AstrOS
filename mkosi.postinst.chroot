@@ -14,8 +14,8 @@ locale-gen
   cat >/usr/lib/os-release <<EOF
 NAME="AstrOS"
 PRETTY_NAME="AstrOS"
-ID="$ID"
-ID_LIKE="astros-$ID"
+ID="astros"
+ID_LIKE="$ID"
 ANSI_COLOR="38;2;23;147;209"
 HOME_URL="https://github.com/linux-universe/AstrOS"
 EOF
