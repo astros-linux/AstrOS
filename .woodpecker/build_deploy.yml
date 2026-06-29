@@ -25,7 +25,7 @@ steps:
       - pacman -Sy --noconfirm --needed rsync gnupg
       - rm -f mkosi.output/initrd mkosi.output/initrd.cpio.zst
       - cd mkosi.output
-      - ln -sf "$(ls AstrOS_*.raw | sort -V | tail -n1)" latest.raw
+      - ln -sf "$(ls AstrOS_*x86-64.raw | sort -V | tail -n1)" latest.raw
       - sha256sum -- AstrOS* > SHA256SUMS
       - printf '%s' "$GPG_KEY" | gpg --batch --import
       - gpg --batch --yes --pinentry-mode loopback --detach-sign --armor -o SHA256SUMS.asc SHA256SUMS
