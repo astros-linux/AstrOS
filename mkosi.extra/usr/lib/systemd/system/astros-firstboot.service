@@ -1,0 +1,24 @@
+[Unit]
+Description=AstrOS Linux First Boot Setup
+# Only run on first boot
+ConditionFirstBoot=yes
+# Take over the console before the login prompt appears.
+After=systemd-user-sessions.service
+Before=getty@tty1.service
+Before=cosmic-greeter.service
+Conflicts=getty@tty1.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/astros/astros-firstboot.sh
+
+# Bind the process to tty1 so whiptail has a usable terminal.
+StandardInput=tty-force
+StandardOutput=tty
+StandardError=tty
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -45,46 +45,9 @@ Any tool that writes a raw image (e.g. `dd`) works too.
 
 ## Install
 
-> [!WARNING]
-> The installer **erases the target disk**. Double-check the device name (`lsblk`) before running these commands.
-
 1. Boot the live profile from the USB stick.
 
-2. Wipe the disk you want to install to:
-
-   ```sh
-   wipefs -a /dev/sdX
-   ```
-
-3. Copy the system over:
-
-   ```sh
-   systemd-repart --dry-run=no --empty=force --defer-partitions=root /dev/sdX
-   ```
-
-4. Reboot and remove the USB stick.
-
-### First boot
-
-There's no automatic user-creation tool implemented yet, so create your account manually:
-
-1. Switch to a TTY with <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F2</kbd> and log in as `root`.
-
-2. Create your user and grant admin rights:
-
-   ```sh
-   useradd -m yourname
-   usermod -aG wheel yourname
-   passwd yourname
-   ```
-
-3. Log in as your new user and enable the user-services:
-
-   ```sh
-   systemctl --user preset-all
-   ```
-
-Then restart the COSMIC session.
+2. Run the installer with 'astros-install'
 
 ## Updating
 

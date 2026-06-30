@@ -1,3 +1,5 @@
+enable astros-firstboot.service
+
 enable NetworkManager.service
 enable cosmic-greeter.service
 enable bluetooth.service

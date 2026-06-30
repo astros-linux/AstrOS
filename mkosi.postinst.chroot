@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-# Gen loclaes
+# gen locales
 locale-gen
 
-# Branding
+# branding
 (
   . /usr/lib/os-release
   cat >/usr/lib/os-release <<EOF
