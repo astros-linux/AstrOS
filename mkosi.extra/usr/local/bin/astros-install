@@ -21,18 +21,11 @@ if [[ ${#DISK_ARGS[@]} -eq 0 ]]; then
   exit 1
 fi
 
-DISK=""
-while true; do
-  DISK=$(whiptail --backtitle "$BACKTITLE" --title "Select disk" --menu \
-    "Choose the disk to install AstrOS Linux to." \
-    0 0 0 "${DISK_ARGS[@]}" 3>&1 1>&2 2>&3) || DISK=""
-
-  if [[ -z "$DISK" ]]; then
-    whiptail --backtitle "$BACKTITLE" --msgbox "A disk must be selected to continue." 0 0
-    continue
-  fi
-  break
-done
+if ! DISK=$(whiptail --backtitle "$BACKTITLE" --title "Select disk" --menu \
+  "Choose the disk to install AstrOS Linux to." \
+  0 0 0 "${DISK_ARGS[@]}" 3>&1 1>&2 2>&3); then
+  exit 1
+fi
 
 # confirm wipe
 if ! whiptail --backtitle "$BACKTITLE" --title "Confirm disk wipe" --yesno \
