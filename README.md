@@ -18,7 +18,7 @@
 - **Verified boot** - Unified Kernel Images are signed and measured, sealed against your TPM chip (PCR11); Secure Boot is supported.
 - **Full-disk encryption** - the root partition (btrfs, holding `/home` and `/var`) is encrypted and unlocked automatically via TPM2.
 - **COSMIC desktop** - the modern Rust-based desktop from System76, tightly integrated.
-- **Containers ready** - Install GUI-Apps using `flatpak` and use `distrobox` for running terminal or non flatpak supported software.
+- **Container ready** - Install GUI-Apps using `flatpak` and use `distrobox` for running terminal or non flatpak supported software.
 
 ---
 
@@ -27,7 +27,7 @@
 - **x86-64** machine with **UEFI** firmware
 - A **TPM 2.0** module
 - 30GB disk space (both `/usr` partitions need at least 5GB)
-- USB stick for installation
+- 8GB USB stick for installation
 
 ## Download
 
@@ -47,7 +47,7 @@ Any tool that writes a raw image (e.g. `dd`) works too.
 
 1. Boot the live profile from the USB stick.
 
-2. Run the installer with 'astros-install'
+2. Run the installer with `astros-install`
 
 ## Updating
 
