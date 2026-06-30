@@ -33,12 +33,12 @@
 
 Grab the latest image:
 
-[AstrOS_latest_x86-64.raw](https://dl.astros-linux.org/AstrOS_latest_x86-64.raw)
+[AstrOS_latest_x86-64.raw.zst](https://dl.astros-linux.org/AstrOS_latest_x86-64.raw.zst)
 
 Write it to a USB stick. We recommend [caligula](https://github.com/ifd3f/caligula):
 
 ```sh
-caligula burn AstrOS_latest_x86-64.raw
+caligula burn AstrOS_latest_x86-64.raw.zst
 ```
 
 Any tool that writes a raw image (e.g. `dd`) works too.

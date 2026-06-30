@@ -24,7 +24,7 @@ steps:
   - name: deploy
     image: docker.io/library/archlinux
     commands:
-      - pacman -Sy --noconfirm --needed rsync gnupg
+      - pacman -Syu --noconfirm --needed rsync gnupg
       - rm -f mkosi.output/initrd mkosi.output/initrd.cpio.zst
       - cd mkosi.output
       - zstd "$(ls AstrOS_*x86-64.raw | sort -V | tail -n1)"
