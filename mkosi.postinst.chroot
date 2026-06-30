@@ -1,11 +1,7 @@
 #!/bin/bash
 set -e
 
-# Generate locales
-cat <<EOF >/etc/locale.gen
-en_US.UTF-8 UTF-8
-#de_DE.UTF-8 UTF-8
-EOF
+# Gen loclaes
 locale-gen
 
 # Branding
