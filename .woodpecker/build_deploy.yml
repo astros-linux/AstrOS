@@ -8,6 +8,8 @@ steps:
   - name: build
     image: docker.io/library/archlinux
     commands:
+      - umask 022
+      - chmod -R go-w .
       - pacman -Syu --noconfirm mkosi
       - printf '%s' "$MKOSI_KEY" > mkosi.key
       - printf '%s' "$MKOSI_CRT" > mkosi.crt
