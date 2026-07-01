@@ -31,7 +31,7 @@ done
 USERNAME=""
 while true; do
   USERNAME=$(whiptail --backtitle "$BACKTITLE" --title "Create user" --inputbox \
-    "Enter the username to create (required)." 0 0 3>&1 1>&2 2>&3) || USERNAME=""
+    "Enter the username to create." 0 0 3>&1 1>&2 2>&3) || USERNAME=""
 
   if [[ -z "$USERNAME" ]]; then
     whiptail --backtitle "$BACKTITLE" --msgbox "A username is required. User creation cannot be skipped." 0 0
@@ -75,6 +75,29 @@ usermod -aG wheel "$USERNAME"
 echo "$USERNAME:$PASS1" | chpasswd
 
 systemctl -M "$USERNAME@" --user preset-all
+
+# luks recovery key
+## enroll a recovery key, unlocked via the already-enrolled TPM2 device
+if RECOVERY_KEY=$(systemd-cryptenroll --recovery-key --unlock-tpm2-device=auto \
+  /dev/disk/by-label/luks-AstrOS-root 2>/dev/null); then
+
+  ## build the message: a note, the QR code, then the key in plain text
+  QR=$(qrencode -t UTF8 "$RECOVERY_KEY")
+  MESSAGE="A recovery key for the encrypted root disk has been enrolled.
+
+Save it somewhere safe and offline. You will need it to unlock
+this system if the automatic TPM2 unlock ever fails.
+
+${QR}
+
+${RECOVERY_KEY}"
+
+  whiptail --backtitle "$BACKTITLE" --title "Recovery key" --msgbox \
+    "$MESSAGE" 0 0
+else
+  whiptail --backtitle "$BACKTITLE" --msgbox \
+    "Failed to enroll a recovery key for the encrypted disk. Please do it manually." 0 0
+fi
 
 # reboot
 whiptail --backtitle "$BACKTITLE" --msgbox "Setup complete." 0 0
