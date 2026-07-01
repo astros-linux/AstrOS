@@ -1,6 +1,6 @@
 # AstrOS
 
-[![status-badge](https://ci.astros-linux.org/api/badges/3/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/3)
+[![status-badge](https://ci.astros-linux.org/api/badges/4/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/4)
 
 **AstrOS** is an immutable, secure-by-default Linux distribution built on **Arch Linux**, **ParticleOS** and the **COSMIC** desktop.
 
