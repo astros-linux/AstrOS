@@ -16,3 +16,6 @@ ANSI_COLOR="38;2;23;147;209"
 HOME_URL="https://astros-linux.org"
 EOF
 )
+
+# required for podman
+chmod u+s /usr/bin/newuidmap /usr/bin/newgidmap
