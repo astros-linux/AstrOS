@@ -2,7 +2,7 @@
 
 [![status-badge](https://ci.astros-linux.org/api/badges/4/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/4)
 
-**AstrOS** is an immutable, secure-by-default Linux distribution built on **Arch Linux**, **ParticleOS** and the **COSMIC** desktop.
+**AstrOS** is an immutable, secure-by-default Linux distribution built on **Arch Linux** and the **COSMIC** desktop.
 
 > [!CAUTION]
 > AstrOS is in **early development and highly unstable**. Expect breaking changes, missing features, and rough edges. Don't run it on a machine you depend on.
@@ -74,4 +74,4 @@ mkosi -f -B # This builds to `mkosi.output/`
 
 AstrOS is licensed under the **GNU General Public License v3** - see [`LICENSE`](./LICENSE).
 
-The system's architecture and build configuration are highly inspired from **[ParticleOS](https://github.com/systemd/particleos)** by systemd, Thanks!
+The repart / sysupdate configuration are highly inspired from **[ParticleOS](https://github.com/systemd/particleos)** by systemd, Thanks!
