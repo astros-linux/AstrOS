@@ -3,6 +3,8 @@ when:
     branch: main
   - event: cron
     branch: main
+  - event: manual
+    branch: main
 
 steps:
   - name: build
