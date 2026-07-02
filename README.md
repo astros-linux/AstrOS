@@ -33,6 +33,8 @@ Grab the latest image:
 
 [AstrOS_latest_x86-64.raw.zst](https://dl.astros-linux.org/AstrOS_latest_x86-64.raw.zst)
 
+[SHA256SUMS](https://dl.astros-linux.org/SHA256SUMS)
+
 Write it to a USB stick. We recommend [caligula](https://github.com/ifd3f/caligula):
 
 ```sh
