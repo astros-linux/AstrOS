@@ -1,1 +1,2 @@
 enable astros-install.service
+enable images.mount

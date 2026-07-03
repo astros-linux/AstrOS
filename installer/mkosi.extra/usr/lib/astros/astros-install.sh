@@ -37,7 +37,7 @@ fi
 
 # wipe + partition
 wipefs -a "$DISK"
-unzstd -c /usr/images/AstrOS.raw.zst | dd of="$DISK" bs=4M status=progress
+unzstd -c /images/AstrOS.raw.zst | dd of="$DISK" bs=4M status=progress
 
 # reboot
 whiptail --backtitle "$BACKTITLE" --msgbox "Installation complete." 0 0
