@@ -18,7 +18,7 @@ steps:
       - printf '%s' "$MKOSI_KEY" > mkosi.key
       - printf '%s' "$MKOSI_CRT" > mkosi.crt
       - chmod 0600 mkosi.key mkosi.crt
-      - mkosi -f -B
+      - mkosi -f -B --workspace-directory=/woodpecker/mkosi.workspace
     environment:
       MKOSI_KEY:
         from_secret: mkosi.key
@@ -34,7 +34,7 @@ steps:
       - cp ./system/mkosi.version ./installer/
       - zstd -o ./installer/mkosi.extra/images/AstrOS.raw.zst ./system/mkosi.output/AstrOS*_x86-64.raw 
       - cd installer
-      - mkosi -f -B
+      - mkosi -f -B --workspace-directory=/woodpecker/mkosi.workspace
 
   - name: deploy
     image: docker.io/library/archlinux
