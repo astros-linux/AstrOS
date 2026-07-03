@@ -18,7 +18,7 @@ steps:
       - printf '%s' "$MKOSI_KEY" > mkosi.key
       - printf '%s' "$MKOSI_CRT" > mkosi.crt
       - chmod 0600 mkosi.key mkosi.crt
-      - mkosi -f -B --workspace-directory=/woodpecker/mkosi.workspace
+      - mkosi -f --workspace-directory=/woodpecker/mkosi.workspace
     environment:
       MKOSI_KEY:
         from_secret: mkosi.key
