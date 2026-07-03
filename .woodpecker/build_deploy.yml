@@ -7,13 +7,14 @@ when:
     branch: main
 
 steps:
-  - name: build
+  - name: build system
     image: docker.io/library/archlinux
     privileged: true
     commands:
       - umask 022
       - chmod -R go-w .
       - pacman -Syu --noconfirm mkosi
+      - cd system
       - printf '%s' "$MKOSI_KEY" > mkosi.key
       - printf '%s' "$MKOSI_CRT" > mkosi.crt
       - chmod 0600 mkosi.key mkosi.crt
@@ -24,14 +25,25 @@ steps:
       MKOSI_CRT:
         from_secret: mkosi.crt
 
+  - name: build installer
+    image: docker.io/library/archlinux
+    privileged: true
+    commands:
+      - umask 022
+      - pacman -Syu --noconfirm mkosi
+      - cp ./system/mkosi.version ./installer/
+      - cp ./system/mkosi.output/AstrOS*_x86-64.raw ./installer/mkosi.extra/usr/images/
+      - cd installer
+      - mkosi -f -B
+
   - name: deploy
     image: docker.io/library/archlinux
     commands:
       - pacman -Syu --noconfirm --needed rsync gnupg
-      - rm -f mkosi.output/initrd mkosi.output/initrd.cpio.zst
-      - cd mkosi.output
-      - zstd "$(ls AstrOS_*x86-64.raw | sort -V | tail -n1)"
-      - ln -sf "$(ls AstrOS_*.raw.zst | sort -V | tail -n1)" AstrOS_latest_x86-64.raw.zst
+      - rm -f ./system/mkosi.output/initrd mkosi.output/initrd.cpio.zst
+      - mv ./installer/mkosi.output/AstrOS-installer*_x86-64.raw.zst ./system/mkosi.output
+      - cd ./system/mkosi.output
+      - ln -sf AstrOS-installer*.raw.zst AstrOS-installer_latest_x86-64.raw.zst
       - sha256sum -- AstrOS* > SHA256SUMS
       - printf '%s' "$GPG_KEY" | gpg --batch --import
       - gpg --batch --yes --pinentry-mode loopback --detach-sign --armor -o SHA256SUMS.asc SHA256SUMS

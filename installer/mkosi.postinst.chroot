@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+# branding
+(
+  . /usr/lib/os-release
+  cat >/usr/lib/os-release <<EOF
+NAME="AstrOS-installer"
+ID="astros"
+ID_LIKE="$ID"
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://astros-linux.org"
+EOF
+)
