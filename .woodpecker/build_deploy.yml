@@ -9,7 +9,6 @@ when:
 steps:
   - name: build system
     image: docker.io/library/archlinux
-    privileged: true
     commands:
       - umask 022
       - chmod -R go-w .
@@ -27,7 +26,6 @@ steps:
 
   - name: build installer
     image: docker.io/library/archlinux
-    privileged: true
     commands:
       - umask 022
       - pacman -Syu --noconfirm mkosi
