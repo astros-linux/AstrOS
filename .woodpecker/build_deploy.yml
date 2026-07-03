@@ -32,7 +32,7 @@ steps:
       - umask 022
       - pacman -Syu --noconfirm mkosi
       - cp ./system/mkosi.version ./installer/
-      - cp ./system/mkosi.output/AstrOS*_x86-64.raw ./installer/mkosi.extra/usr/images/
+      - zstd -o ./installer/mkosi.extra/usr/images/AstrOS.raw.zst ./system/mkosi.output/AstrOS*_x86-64.raw 
       - cd installer
       - mkosi -f -B
 
@@ -40,7 +40,7 @@ steps:
     image: docker.io/library/archlinux
     commands:
       - pacman -Syu --noconfirm --needed rsync gnupg
-      - rm -f ./system/mkosi.output/initrd mkosi.output/initrd.cpio.zst
+      - rm -f ./system/mkosi.output/initrd ./system/mkosi.output/initrd.cpio.zst
       - mv ./installer/mkosi.output/AstrOS-installer*_x86-64.raw.zst ./system/mkosi.output
       - cd ./system/mkosi.output
       - ln -sf AstrOS-installer*.raw.zst AstrOS-installer_latest_x86-64.raw.zst
