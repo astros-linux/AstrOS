@@ -31,23 +31,17 @@
 
 Grab the latest image:
 
-[AstrOS_latest_x86-64.raw.zst](https://dl.astros-linux.org/AstrOS_latest_x86-64.raw.zst)
+[AstrOS-installer_latest_x86-64.raw.zst](https://dl.astros-linux.org/AstrOS-installer_latest_x86-64.raw.zst)
 
 [SHA256SUMS](https://dl.astros-linux.org/SHA256SUMS)
 
 Write it to a USB stick. We recommend [caligula](https://github.com/ifd3f/caligula):
 
 ```sh
-caligula burn AstrOS_latest_x86-64.raw.zst
+caligula burn AstrOS-installer_latest_x86-64.raw.zst
 ```
 
 Any tool that writes a raw image (e.g. `dd`) works too.
-
-## Install
-
-1. Boot the live profile from the USB stick.
-
-2. Run the installer with `astros-install`
 
 ## Updating
 
