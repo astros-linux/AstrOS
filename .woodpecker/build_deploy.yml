@@ -30,7 +30,7 @@ steps:
       - umask 022
       - pacman -Syu --noconfirm mkosi
       - cp ./system/mkosi.version ./installer/
-      - zstd -o ./installer/mkosi.extra/images/AstrOS.raw.zst ./system/mkosi.output/AstrOS*_x86-64.raw 
+      - zstd -o ./installer/mkosi.extra/images/AstrOS.raw.zst ./system/mkosi.output/AstrOS*_x86-64.raw
       - cd installer
       - mkosi -f --workspace-directory=/woodpecker/mkosi.workspace
 

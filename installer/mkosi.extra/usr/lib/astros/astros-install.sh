@@ -40,5 +40,5 @@ wipefs -a "$DISK"
 unzstd -c /images/AstrOS.raw.zst | dd of="$DISK" bs=4M conv=fsync status=progress
 
 # reboot
-whiptail --backtitle "$BACKTITLE" --msgbox "Installation complete." 0 0
+whiptail --backtitle "$BACKTITLE" --msgbox "Installation complete. Reboot now" 0 0
 reboot
