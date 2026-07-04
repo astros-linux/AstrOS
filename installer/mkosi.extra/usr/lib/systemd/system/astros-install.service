@@ -5,6 +5,8 @@ After=systemd-user-sessions.service
 Before=getty@tty1.service
 Conflicts=getty@tty1.service
 
+FailureAction=poweroff
+
 [Service]
 Type=oneshot
 ExecStart=/usr/lib/astros/astros-install.sh
