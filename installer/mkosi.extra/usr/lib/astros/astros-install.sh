@@ -9,11 +9,20 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+IMAGE=/images/AstrOS.raw.zst
+if [[ ! -r $IMAGE ]]; then
+  whiptail --backtitle "$BACKTITLE" --msgbox "Installation image not found: $IMAGE" 0 0
+  exit 1
+fi
+
 # disk selection
 ## build a whiptail menu list from available disks
+LIVE_DISK=$(lsblk -no PKNAME "$(findmnt -no SOURCE --target /images)" 2>/dev/null | head -n1)
+
 DISK_ARGS=()
 while read -r NAME SIZE MODEL; do
-  DISK_ARGS+=("/dev/$NAME" "$SIZE  $MODEL")
+  [[ $NAME == "$LIVE_DISK" ]] && continue
+  DISK_ARGS+=("/dev/$NAME" "$SIZE  ${MODEL:-Unknown}")
 done < <(lsblk -dn -o NAME,SIZE,MODEL -e 7,11)
 
 if [[ ${#DISK_ARGS[@]} -eq 0 ]]; then
@@ -37,7 +46,7 @@ fi
 
 # wipe + partition
 wipefs -a "$DISK"
-unzstd -c /images/AstrOS.raw.zst | dd of="$DISK" bs=4M conv=fsync status=progress
+unzstd -c "$IMAGE" | dd of="$DISK" bs=4M conv=fsync status=progress
 
 # reboot
 whiptail --backtitle "$BACKTITLE" --msgbox "Installation complete. Reboot now" 0 0
