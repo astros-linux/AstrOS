@@ -20,8 +20,8 @@ asked to follow the rules below for the brand.
 
 ## 3. Color palette
 
-Primary: #[3613aaff]
-Accent: #[b971fbff]
+Primary: `#3613aa`
+Accent: `#b971fb`
 
 ## 4. Trademark policy
 
