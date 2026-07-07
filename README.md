@@ -1,4 +1,6 @@
-# AstrOS
+<p align="left">
+  <img src="./brand/logo/logo.svg" width="50%"/>
+</p>
 
 [![status-badge](https://ci.astros-linux.org/api/badges/4/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/4)
 
