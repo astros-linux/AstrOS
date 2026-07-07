@@ -4,6 +4,8 @@
 
 [![status-badge](https://ci.astros-linux.org/api/badges/4/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/4)
 
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/AstrOS_Linux)
+
 **AstrOS** is an immutable, secure-by-default Linux distribution built on **Arch Linux** and the **COSMIC** desktop.
 
 > [!CAUTION]
