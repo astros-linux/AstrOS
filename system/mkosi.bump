@@ -1,3 +1,5 @@
 #!/bin/bash
 set -e
+
+# generate mkosi.version by the current UTC date and time
 date -u +%Y%m%d%H%M%S

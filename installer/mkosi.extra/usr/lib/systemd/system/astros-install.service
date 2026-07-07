@@ -5,6 +5,7 @@ After=systemd-user-sessions.service
 Before=getty@tty1.service
 Conflicts=getty@tty1.service
 
+# Power off on failure
 FailureAction=poweroff
 
 [Service]

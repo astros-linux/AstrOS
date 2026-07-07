@@ -1,4 +1,5 @@
 # this is required for gnome-keyring to work with cosmic-greeter
+# https://gitlab.archlinux.org/archlinux/packaging/packages/cosmic-greeter/-/work_items/6
 
 #%PAM-1.0
 

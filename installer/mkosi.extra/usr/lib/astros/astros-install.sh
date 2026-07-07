@@ -9,6 +9,7 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# check for the image
 IMAGE=/images/AstrOS.raw.zst
 if [[ ! -r $IMAGE ]]; then
   whiptail --backtitle "$BACKTITLE" --msgbox "Installation image not found: $IMAGE" 0 0
@@ -16,9 +17,10 @@ if [[ ! -r $IMAGE ]]; then
 fi
 
 # disk selection
-## build a whiptail menu list from available disks
+# determine the live usb disk
 LIVE_DISK=$(lsblk -no PKNAME "$(findmnt -no SOURCE --target /images)" 2>/dev/null | head -n1)
 
+# create the disk list while excluding the live disk
 DISK_ARGS=()
 while read -r NAME SIZE MODEL; do
   [[ $NAME == "$LIVE_DISK" ]] && continue
@@ -44,7 +46,7 @@ if ! whiptail --backtitle "$BACKTITLE" --title "Confirm disk wipe" --yesno \
   exit 1
 fi
 
-# wipe + partition
+# wipe & dd the image to the selected disk
 wipefs -a "$DISK"
 unzstd -c "$IMAGE" | dd of="$DISK" bs=4M conv=fsync status=progress
 
