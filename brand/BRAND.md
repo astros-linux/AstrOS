@@ -14,9 +14,9 @@ asked to follow the rules below for the brand.
 ## 2. The logo
 
 ### Variants
-- [`Logo`](./logo/logo.svg) - mark & wordmark
-- [`Mark`](./logo/mark.svg)
-- [`Wordmark`](./logo/wordmark.svg)
+- [`Logo`](./logo/logo.png) - mark & wordmark
+- [`Mark`](./logo/mark.png)
+- [`Wordmark`](./logo/wordmark.png)
 
 ## 3. Color palette
 
