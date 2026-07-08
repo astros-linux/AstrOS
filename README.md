@@ -66,7 +66,7 @@ Use `updatectl vacuum` in case of the update failing because of previously unfin
 AstrOS is built with [mkosi](https://github.com/systemd/mkosi).
 
 ```sh
-git clone https://github.com/linux-universe/AstrOS
+git clone https://github.com/astros-linux/AstrOS
 cd AstrOS
 mkosi genkey # You'll need your own keys, or AstrOS will fail to build.
 mkosi -f -B # This builds to `mkosi.output/`
