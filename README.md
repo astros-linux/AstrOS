@@ -59,6 +59,36 @@ updatectl update
 
 Use `updatectl vacuum` in case of the update failing because of previously unfinished updates.
 
+## Installing Software
+
+### Flatpak
+
+If a software is available as a Flatpak, it should be your first option. You can install Flatpaks using the `cosmic-store`. There is a bug in either Cosmic Store or AstrOS that prevents the store from updating the flatpak appstream and so fails to display any software in the store on first use. For the Flatpaks to display in the store, run `flatpak update` once.
+
+### Distrobox
+
+For software not available as a flatpak or terminal tools, use Distrobox.
+
+Use `distrobox enter` for creating and entering your first Distrobox. It defaults to Arch Linux.
+
+### Systemd Sysextensions
+
+Planned for the future.
+
+## FAQ
+
+### How do I dual boot?
+
+You can't. It may or may not be added in the future
+
+### I have an nvidia gpu. Can I use AstrOS
+
+Currently, there aren't any drivers implemented. The fact that I don't have an Nvidia card to test things makes things more difficult. The best-case scenario would be to have a systemd-sysext for Nvidia in the future. All contributions are welcome!
+
+### Is AstrOS the right distro for me?
+
+AstrOS is a strongly opinionated project. Due to its image-based nature, it isn't really for tinkerers. It is for those who want a secure, encrypted, and signed operating system that just works with minimal effort.
+
 ---
 
 ## Building from source
