@@ -94,6 +94,8 @@ AstrOS is a strongly opinionated project. Due to its image-based nature, it isn'
 
 ## Building from source
 
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for contribution guidelines.
+
 AstrOS is built with [mkosi](https://github.com/systemd/mkosi).
 
 ```sh
