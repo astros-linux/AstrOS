@@ -43,7 +43,7 @@ steps:
       - mv ./installer/mkosi.output/AstrOS-installer*_x86-64.raw.zst ./system/mkosi.output
       - cd ./system/mkosi.output
       - ln -sf AstrOS-installer*.raw.zst AstrOS-installer_latest_x86-64.raw.zst
-      - sha256sum -- AstrOS* virtualization* > SHA256SUMS
+      - sha256sum -- AstrOS* > SHA256SUMS
       - printf '%s' "$GPG_KEY" | gpg --batch --import
       - gpg --batch --yes --pinentry-mode loopback --detach-sign --armor -o SHA256SUMS.asc SHA256SUMS
       - cd ..
