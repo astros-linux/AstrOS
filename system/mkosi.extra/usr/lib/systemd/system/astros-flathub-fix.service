@@ -1,0 +1,14 @@
+[Unit]
+Description=Add Flathub and refresh appstream for COSMIC Store
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/astros/astros-flathub-fix.sh
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
