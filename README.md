@@ -74,7 +74,9 @@ Run `distrobox enter` for creating and entering your first Distrobox. It default
 
 ### Systemd Sysextensions
 
-Planned for the future.
+List available extensions with `updatectl features`
+
+Enable with `updatectl enable --now --reboot <feature>`
 
 ## FAQ
 
