@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+# Hook for custom bios updater
+for JUPITER_BIOSUPDATE_SCRIPT in \
+    "/usr/lib/os-biosupdate" \
+    "/usr/libexec/os-biosupdate"
+do
+    if [ -f "$JUPITER_BIOSUPDATE_SCRIPT" ]; then
+        exec "${JUPITER_BIOSUPDATE_SCRIPT}" "$@"
+    fi
+done
+
+exit 0;

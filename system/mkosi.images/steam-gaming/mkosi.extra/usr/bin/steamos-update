@@ -1,0 +1,53 @@
+#! /bin/bash
+
+# The Steam client is known to call this script with the following parameter combinations:
+# steamos-update --supports-duplicate-detection     -- should do nothing
+# steamos-update --enable-duplicate-detection check -- should check for update
+# steamos-update check                              -- should check for update
+# steamos-update --enable-duplicate-detection       -- should perform an update
+# steamos-update                                    -- should perform an update
+
+# This script will call /usr/libexec/ogc/os-update with a single argument, either "check" or "update".
+# Steam expects the custom os-update script to function as follows.
+#
+# For check:
+# - If there is no update available, exit with code 7
+# - If there is an update available, print "Update available: <VERSION>" and exit with code 0
+#   Steam displays "<VERSION>" when developer mode is enabled
+# - If there is an error, exit with a non-zero code other than 7
+#
+# For update:
+# - Begin the OS update process and continuously output the percentage completion as
+#   an integer value between 0-100 followed by a '%' character and newline
+# - If the update completes successfully, exit with code 0
+# - If there is an error, exit with a non-zero code other than 7
+
+OS_UPDATE_SCRIPT=/usr/libexec/ogc/os-update
+
+# Process arguments from Steam
+ACTION=update
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    check)
+      ACTION=check
+      shift
+      ;;
+    --supports-duplicate-detection)
+      EXIT=yes
+      shift
+      ;;
+    *)
+      shift
+      ;;
+  esac
+done
+
+if [ -n "${EXIT}" ]; then
+	exit 0
+fi
+
+if [ ! -f "${OS_UPDATE_SCRIPT}" ]; then
+	exit 7
+fi
+
+exec "${OS_UPDATE_SCRIPT}" "${ACTION}"

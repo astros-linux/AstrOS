@@ -119,3 +119,5 @@ mkosi -f -B # This builds to `mkosi.output/`
 AstrOS is licensed under the **GNU General Public License v3** - see [`LICENSE`](./LICENSE).
 
 The repart / sysupdate configuration are highly inspired from **[ParticleOS](https://github.com/systemd/particleos)** by systemd, Thanks!
+
+Thanks to the OGC Collective for the gamescope session: https://github.com/OpenGamingCollective/gamescope-session-steam
