@@ -1,0 +1,15 @@
+[Transfer]
+Features=virtualization
+ProtectVersion=%A
+
+[Source]
+Type=url-file
+Path=https://dl.astros-linux.org/
+MatchPattern=virtualization_@v.raw
+
+[Target]
+Type=regular-file
+Path=/var/lib/extensions
+MatchPattern=virtualization_@v.raw
+Mode=0444
+InstancesMax=2
