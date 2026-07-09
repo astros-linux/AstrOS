@@ -38,7 +38,8 @@ steps:
     image: docker.io/library/archlinux
     commands:
       - pacman -Syu --noconfirm --needed rsync gnupg
-      - rm -f ./system/mkosi.output/initrd* ./system/mkosi.output/base*
+      - rm -f ./system/mkosi.output/initrd*
+      - rm -rf ./system/mkosi.output/base*
       - mv ./installer/mkosi.output/AstrOS-installer*_x86-64.raw.zst ./system/mkosi.output
       - cd ./system/mkosi.output
       - ln -sf AstrOS-installer*.raw.zst AstrOS-installer_latest_x86-64.raw.zst
