@@ -64,7 +64,7 @@ Use `updatectl vacuum` in case of the update failing because of previously unfin
 
 ### Flatpak
 
-If a software is available as a Flatpak, it should be your first option. You can install Flatpaks using the `cosmic-store`. There is a bug in either Cosmic Store or AstrOS that prevents the store from updating the Flatpak appstream and so fails to display any software in the store on first use. For the Flatpaks to display in the store, run `flatpak update` once.
+If a software is available as a Flatpak, it should be your first option. You can install Flatpaks using the `cosmic-store`.
 
 ### Distrobox
 
