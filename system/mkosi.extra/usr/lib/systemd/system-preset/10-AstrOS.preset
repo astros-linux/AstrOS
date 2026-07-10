@@ -1,4 +1,5 @@
 enable astros-firstboot.service
+enable astros-flathub-fix.service
 
 enable NetworkManager.service
 enable cosmic-greeter.service
