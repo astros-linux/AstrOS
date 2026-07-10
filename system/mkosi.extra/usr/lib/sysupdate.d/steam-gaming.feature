@@ -1,3 +1,3 @@
 [Feature]
-Description=SteamOS like gamescope session
+Description=Steam & SteamOS like gamescope session
 Enabled=false
