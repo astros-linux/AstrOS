@@ -1,0 +1,6 @@
+[submodule "system/mkosi.images/steam-gaming/submodules/AstrOS-gamescope-session-steam"]
+	path = system/mkosi.images/steam-gaming/submodules/AstrOS-gamescope-session-steam
+	url = https://github.com/astros-linux/AstrOS-gamescope-session-steam
+[submodule "system/mkosi.images/steam-gaming/submodules/AstrOS-gamescope-session"]
+	path = system/mkosi.images/steam-gaming/submodules/AstrOS-gamescope-session
+	url = https://github.com/astros-linux/AstrOS-gamescope-session

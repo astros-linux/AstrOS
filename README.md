@@ -102,7 +102,7 @@ AstrOS is built with [mkosi](https://github.com/systemd/mkosi).
 
 system:
 ```sh
-git clone https://github.com/astros-linux/AstrOS
+git clone --recurse-submodules https://github.com/astros-linux/AstrOS
 cd AstrOS/system
 mkosi genkey # You'll need your own keys, or AstrOS will fail to build.
 mkosi -f -B # This builds to `mkosi.output/`
