@@ -31,6 +31,8 @@ Take a look at our community channels linked at the top of our [`README`](./READ
 
 - https://github.com/systemd/mkosi/blob/main/mkosi/resources/man/mkosi.1.md
 - https://www.freedesktop.org/software/systemd/man/latest/systemd-sysupdate.html
+- https://www.freedesktop.org/software/systemd/man/latest/sysupdate.features.html
+- https://www.freedesktop.org/software/systemd/man/latest/sysext.conf.html
 - https://www.freedesktop.org/software/systemd/man/latest/updatectl.html
 - https://www.freedesktop.org/software/systemd/man/latest/repart.d.html
 - https://www.freedesktop.org/software/systemd/man/latest/tmpfiles.d.html
