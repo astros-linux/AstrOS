@@ -60,6 +60,8 @@ updatectl update
 
 Use `updatectl vacuum` in case of the update failing because of previously unfinished updates.
 
+Run `systemctl enable --now systemd-sysupdate.timer` for auto updates.
+
 ## Installing Software
 
 ### Flatpak
@@ -74,15 +76,15 @@ Run `distrobox enter` for creating and entering your first Distrobox. It default
 
 ### Systemd Sysextensions
 
-List available extensions with `updatectl features`
+List available extensions with `updatectl features`.
 
-Enable with `updatectl enable --now --reboot <feature>`
+Enable with `updatectl enable --now --reboot <feature>`.
 
 ## FAQ
 
 ### How do I dual boot?
 
-You can't. It may or may not be added in the future
+You can't. It may or may not be added in the future.
 
 ### I have an nvidia gpu. Can I use AstrOS
 
@@ -110,7 +112,7 @@ mkosi -f -B # This builds to `mkosi.output/`
 
 installer:
 ```sh
-git clone https://github.com/astros-linux/AstrOS
+git clone --recurse-submodules https://github.com/astros-linux/AstrOS
 # zstd -o ./installer/mkosi.extra/images/AstrOS.raw.zst ./system/mkosi.output/AstrOS*_x86-64.raw
 cd AstrOS/installer
 mkosi -f -B # This builds to `mkosi.output/`
@@ -122,4 +124,4 @@ AstrOS is licensed under the **GNU General Public License v3** - see [`LICENSE`]
 
 The repart / sysupdate configuration are highly inspired from **[ParticleOS](https://github.com/systemd/particleos)** by systemd, Thanks!
 
-Thanks to the OGC Collective for the gamescope session: https://github.com/OpenGamingCollective/gamescope-session-steam
+Thanks to the OGC Collective for the [gamescope session](https://github.com/OpenGamingCollective/gamescope-session-steam).
