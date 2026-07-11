@@ -74,7 +74,7 @@ For software not available as a Flatpak or terminal tools, use Distrobox.
 
 Run `distrobox enter` for creating and entering your first Distrobox. It defaults to Arch Linux.
 
-### Systemd Sysextensions
+### System Extensions
 
 List available extensions with `updatectl features`.
 
