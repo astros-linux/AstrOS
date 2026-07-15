@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+# deduplication removed modules.dep. We move it to another dir before.
+cd /usr/lib/modules/*/
+mkdir -p .depmod
+cp -a modules.* .depmod/

@@ -4,3 +4,8 @@ set -e
 # cp /etc to /usr/share/factory/etc for systemd-tmpfiles
 mkdir -p "$BUILDROOT/usr/share/factory/"
 cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$BUILDROOT/usr/share/factory/etc"
+
+# move back the depmod files
+cd "$BUILDROOT"/usr/lib/modules/*/
+cp -a .depmod/. .
+rm -rf .depmod
