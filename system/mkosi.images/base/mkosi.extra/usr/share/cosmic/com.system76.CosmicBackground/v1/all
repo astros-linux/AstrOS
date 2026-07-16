@@ -1,6 +1,6 @@
 (
     output: "all",
-    source: Path("/usr/share/backgrounds/cosmic/webb-inspired-wallpaper-system76.jpg"),
+    source: Path("/usr/share/backgrounds/cosmic/AstrOS.png"),
     filter_by_theme: true,
     rotation_frequency: 300,
     filter_method: Lanczos,
