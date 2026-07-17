@@ -4,6 +4,7 @@ enable astros-gsettings-schemas-fix.service
 
 enable NetworkManager.service
 enable NetworkManager-wait-online.service
+disable systemd-networkd-wait-online.service
 enable cosmic-greeter.service
 enable bluetooth.service
 enable tuned-ppd.service
