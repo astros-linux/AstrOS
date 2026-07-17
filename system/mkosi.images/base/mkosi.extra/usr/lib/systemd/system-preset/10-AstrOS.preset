@@ -1,5 +1,6 @@
 enable astros-firstboot.service
 enable astros-flathub-fix.service
+enable astros-gsettings-schemas-fix.service
 
 enable NetworkManager.service
 enable NetworkManager-wait-online.service
