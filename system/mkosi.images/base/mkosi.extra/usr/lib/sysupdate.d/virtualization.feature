@@ -1,3 +1,3 @@
 [Feature]
-Description=Experimental: libvirtd and virt-manager
+Description=libvirtd and virt-manager
 Enabled=false
