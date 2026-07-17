@@ -4,3 +4,7 @@ set -e
 # cp /etc to /usr/share/factory/etc for systemd-tmpfiles
 mkdir -p "$BUILDROOT/usr/share/factory/"
 cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$BUILDROOT/usr/share/factory/etc"
+
+# enable libvirtd
+mkdir -p "$BUILDROOT/usr/lib/systemd/system/multi-user.target.wants"
+ln -s "../libvirtd.service" "$BUILDROOT/usr/lib/systemd/system/multi-user.target.wants/libvirtd.service"
