@@ -13,7 +13,9 @@
 > [!CAUTION]
 > AstrOS is **alpha software**.
 >
-> Expect breaking changes, missing features, and rough edges. Don't run it on a machine you depend on.
+> Expect breaking changes, missing features, and rough edges.
+
+[Installer](https://dl.astros-linux.org/AstrOS-installer_latest_x86-64.raw.zst)
 
 ---
 
