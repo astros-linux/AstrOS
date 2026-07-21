@@ -17,3 +17,6 @@ ANSI_COLOR="38;2;185;113;251"
 HOME_URL="https://astros-linux.org"
 EOF
 )
+
+# https://wiki.archlinux.org/title/COSMIC#SSH_AUTH_SOCK_not_set
+systemctl enable --user gcr-ssh-agent.socket

@@ -4,7 +4,3 @@ set -e
 CONFEXT="$BUILDROOT/usr/lib/confexts/firewall"
 mkdir -p "$CONFEXT"
 cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$CONFEXT/etc"
-
-# enable firewalld
-mkdir -p "$BUILDROOT/usr/lib/systemd/system/multi-user.target.wants"
-ln -s "../firewalld.service" "$BUILDROOT/usr/lib/systemd/system/multi-user.target.wants/firewalld.service"
