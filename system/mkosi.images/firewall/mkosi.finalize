@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-# cp /etc to /usr/share/factory/etc for systemd-tmpfiles
-mkdir -p "$BUILDROOT/usr/share/factory/"
-cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$BUILDROOT/usr/share/factory/etc"
+CONFEXT="$BUILDROOT/usr/lib/confexts/firewall"
+mkdir -p "$CONFEXT"
+cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$CONFEXT/etc"
 
 # enable firewalld
 mkdir -p "$BUILDROOT/usr/lib/systemd/system/multi-user.target.wants"
