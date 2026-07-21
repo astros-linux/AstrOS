@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-# cp /etc to /usr/share/factory/etc for systemd-tmpfiles
-mkdir -p "$BUILDROOT/usr/share/factory/"
-cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$BUILDROOT/usr/share/factory/etc"
+CONFEXT="$BUILDROOT/usr/lib/confexts/nvidia"
+mkdir -p "$CONFEXT"
+cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$CONFEXT/etc"
 
 # move back the depmod files
 cd "$BUILDROOT"/usr/lib/modules/*/

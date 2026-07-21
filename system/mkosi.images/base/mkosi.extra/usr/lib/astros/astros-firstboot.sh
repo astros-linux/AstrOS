@@ -74,8 +74,6 @@ useradd -m "$USERNAME"
 usermod -aG wheel "$USERNAME"
 echo "$USERNAME:$PASS1" | chpasswd
 
-systemctl -M "$USERNAME@" --user preset-all
-
 # luks recovery key
 ## enroll a recovery key, unlocked via the already-enrolled TPM2 device
 if RECOVERY_KEY=$(systemd-cryptenroll --recovery-key --unlock-tpm2-device=auto \
@@ -98,7 +96,3 @@ else
   whiptail --backtitle "$BACKTITLE" --msgbox \
     "Failed to enroll a recovery key for the encrypted disk. Please do it manually." 0 0
 fi
-
-# reboot
-whiptail --backtitle "$BACKTITLE" --msgbox "Setup complete." 0 0
-reboot

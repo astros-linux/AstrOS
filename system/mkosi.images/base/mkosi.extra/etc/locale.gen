@@ -1,4 +1,3 @@
-# This file gets lost in the final built image. This is by design, as locales can only be generated during build time due to our immutable nature.
 # It is used in 'mkosi.postinst.chroot'
 
 bg_BG.UTF-8 UTF-8
