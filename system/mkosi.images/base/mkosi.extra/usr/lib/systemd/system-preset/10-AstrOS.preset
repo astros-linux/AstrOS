@@ -11,3 +11,6 @@ enable tuned-ppd.service
 enable systemd-timesyncd.service
 enable avahi-daemon.service
 enable cups.service
+
+enable systemd-confext.service
+enable systemd-sysext.service
