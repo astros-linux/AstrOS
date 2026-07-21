@@ -96,7 +96,3 @@ else
   whiptail --backtitle "$BACKTITLE" --msgbox \
     "Failed to enroll a recovery key for the encrypted disk. Please do it manually." 0 0
 fi
-
-# reboot
-whiptail --backtitle "$BACKTITLE" --msgbox "Setup complete." 0 0
-reboot
