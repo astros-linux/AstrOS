@@ -6,7 +6,7 @@ ConditionPathExists=!/var/lib/astros-flathub-fix.done
 
 [Service]
 Type=oneshot
-ExecStart=/usr/lib/astros/astros-flathub-fix.sh
+ExecStart=/usr/bin/flatpak update --appstream
 ExecStartPost=/usr/bin/touch /var/lib/astros-flathub-fix.done
 Restart=on-failure
 RestartSec=30
