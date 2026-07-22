@@ -1,5 +1,5 @@
 [Unit]
-Description=Add Flathub and refresh appstream for COSMIC Store
+Description=Refresh appstream for COSMIC Store
 Wants=network-online.target
 After=network-online.target
 ConditionPathExists=!/var/lib/astros-flathub-fix.done
