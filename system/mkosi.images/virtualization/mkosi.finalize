@@ -4,3 +4,7 @@ set -e
 CONFEXT="$BUILDROOT/usr/lib/confexts/virtualization"
 mkdir -p "$CONFEXT"
 cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$CONFEXT/etc"
+
+# enable libvirtd
+mkdir -p "$BUILDROOT/usr/lib/systemd/system/multi-user.target.wants"
+ln -s "../libvirtd.service" "$BUILDROOT/usr/lib/systemd/system/multi-user.target.wants/libvirtd.service"
