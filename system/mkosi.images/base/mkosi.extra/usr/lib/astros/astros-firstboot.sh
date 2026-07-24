@@ -126,7 +126,7 @@ Update with 'updatectl update --reboot'
 
 Optional features as well as nvidia drivers ship as system extensions:
 
-  updatectl features        #show their current state
-  updatectl enable --now    #enable nvidia drivers (reboot required to apply)
+  updatectl features                #show their current state
+  updatectl enable --now nvidia     #enable nvidia drivers (reboot required to apply)
 
 Without --now a feature only arrives with the next time running updatectl update." 0 0
