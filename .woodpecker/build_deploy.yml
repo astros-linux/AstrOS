@@ -30,7 +30,7 @@ steps:
       - umask 022
       - pacman -Syu --noconfirm mkosi
       - cp ./system/mkosi.version ./installer/
-      - zstd -o ./installer/mkosi.extra/images/AstrOS.raw.zst ./system/mkosi.output/AstrOS*_x86-64.raw
+      - cp ./system/mkosi.output/AstrOS*_x86-64.raw.zst ./installer/mkosi.extra/images/AstrOS.raw.zst
       - cd installer
       - mkosi -f --workspace-directory=/woodpecker/mkosi.workspace
 
@@ -43,7 +43,8 @@ steps:
       - mv ./installer/mkosi.output/AstrOS-installer*_x86-64.raw.zst ./system/mkosi.output
       - cd ./system/mkosi.output
       - ln -sf AstrOS-installer*.raw.zst AstrOS-installer_latest_x86-64.raw.zst
-      - sha256sum -- AstrOS* virtualization* steam-gaming* nvidia* firewall* > SHA256SUMS
+      - for f in *.raw.zst; do ln -s "$f" "${f%.zst}"; done
+      - sha256sum -- * > SHA256SUMS
       - printf '%s' "$GPG_KEY" | gpg --batch --import
       - gpg --batch --yes --pinentry-mode loopback --detach-sign --armor -o SHA256SUMS.asc SHA256SUMS
       - cd ..
