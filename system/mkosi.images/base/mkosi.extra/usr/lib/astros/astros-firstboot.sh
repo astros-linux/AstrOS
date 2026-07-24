@@ -1,7 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
+# branding
 BACKTITLE="AstrOS Linux - First Boot Setup"
+
+read -r -d '' WORDMARK <<'EOF' || true
+==================================
+    _        _         ___  ____
+   / \   ___| |_ _ __ / _ \/ ___|
+  / _ \ / __| __| '__| | | \___ \
+ / ___ \\__ \ |_| |  | |_| |___) |
+/_/   \_\___/\__|_|   \___/|____/
+==================================
+EOF
 
 # rootcheck
 if [[ $EUID -ne 0 ]]; then
@@ -102,3 +113,20 @@ else
   whiptail --backtitle "$BACKTITLE" --msgbox \
     "Failed to enroll a recovery key for the encrypted disk. Please do it manually." 0 0
 fi
+
+# done
+whiptail --backtitle "$BACKTITLE" --title "Setup complete" --msgbox \
+  "$WORDMARK
+
+Setup is complete. Welcome aboard, $USERNAME.
+
+Documentation   https://docs.astros-linux.org
+
+Update with 'updatectl update --reboot'
+
+Optional features as well as nvidia drivers ship as system extensions:
+
+  updatectl features        #show their current state
+  updatectl enable --now    #enable nvidia drivers (reboot required to apply)
+
+Without --now a feature only arrives with the next time running updatectl update." 0 0
