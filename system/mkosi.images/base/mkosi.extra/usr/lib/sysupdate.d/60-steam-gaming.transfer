@@ -5,7 +5,7 @@ ProtectVersion=%A
 [Source]
 Type=url-file
 Path=https://dl.astros-linux.org/
-MatchPattern=steam-gaming_@v.raw
+MatchPattern=steam-gaming_@v.raw.zst
 
 [Target]
 Type=regular-file

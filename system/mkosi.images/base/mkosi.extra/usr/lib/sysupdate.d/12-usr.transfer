@@ -4,7 +4,7 @@ ProtectVersion=%A
 [Source]
 Type=url-file
 Path=https://dl.astros-linux.org/
-MatchPattern=%M_@v_%a.usr-%a.@u.raw
+MatchPattern=%M_@v_%a.usr-%a.@u.raw.zst
 
 [Target]
 Type=partition

@@ -5,7 +5,7 @@ ProtectVersion=%A
 [Source]
 Type=url-file
 Path=https://dl.astros-linux.org/
-MatchPattern=nvidia_@v.raw
+MatchPattern=nvidia_@v.raw.zst
 
 [Target]
 Type=regular-file
