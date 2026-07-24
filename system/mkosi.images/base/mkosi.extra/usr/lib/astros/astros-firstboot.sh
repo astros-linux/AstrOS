@@ -10,20 +10,26 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # keymap
+## create list
+mapfile -t KEYMAP_LIST < <(localectl list-keymaps)
+KEYMAP_MENU=()
+for km in "${KEYMAP_LIST[@]}"; do
+  KEYMAP_MENU+=("$km" "")
+done
+
+## show list and set keymap
 KEYMAP=""
 while true; do
-  KEYMAP=$(whiptail --backtitle "$BACKTITLE" --title "Keymap" --inputbox \
-    "Enter a console keymap (e.g. us, uk, de, fr)." \
-    0 0 3>&1 1>&2 2>&3) || KEYMAP=""
-
-  # accept only if the keymap actually exists, otherwise loop and retry
-  if localectl list-keymaps | grep -qx "$KEYMAP"; then
-    localectl set-keymap "$KEYMAP"
-    break
-  else
+  KEYMAP=$(whiptail --backtitle "$BACKTITLE" --title "Keymap" --menu \
+    "Select a console keymap." 0 0 0 \
+    "${KEYMAP_MENU[@]}" 3>&1 1>&2 2>&3) || KEYMAP=""
+  if [[ -z "$KEYMAP" ]]; then
     whiptail --backtitle "$BACKTITLE" --title "Keymap" --msgbox \
-      "Keymap '$KEYMAP' was not found.\nPlease try again." 0 0
+      "A keymap selection is required.\nPlease try again." 0 0
+    continue
   fi
+  localectl set-keymap "$KEYMAP"
+  break
 done
 
 # user
