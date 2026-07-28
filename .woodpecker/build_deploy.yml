@@ -53,7 +53,7 @@ steps:
       - mkdir -p ~/.config/rclone
       - printf '%s' "$RCLONE" > ~/.config/rclone/rclone.conf
       - chmod 0600 ~/.config/rclone/rclone.conf
-      - rclone sync . r2:astros-dl --stats 5s --stats-one-line --exclude 'SHA256SUMS*'
+      - rclone sync . r2:astros-dl --exclude 'SHA256SUMS*'
       - rclone copy . r2:astros-dl --include 'SHA256SUMS*'
     environment:
       GPG_KEY:
