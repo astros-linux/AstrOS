@@ -37,20 +37,23 @@ steps:
   - name: deploy
     image: docker.io/library/archlinux
     commands:
-      - pacman -Syu --noconfirm --needed rsync gnupg
+      - pacman -Syu --noconfirm --needed rclone gnupg
+
+      # preparation
       - rm -f ./system/mkosi.output/initrd*
       - rm -rf ./system/mkosi.output/base*
       - mv ./installer/mkosi.output/AstrOS-installer*_x86-64.raw.zst ./system/mkosi.output
       - cd ./system/mkosi.output
-      - ln -sf AstrOS-installer*.raw.zst AstrOS-installer_latest_x86-64.raw.zst
-      - for f in *.raw.zst; do ln -s "$f" "$(basename "$f" .zst)"; done # this is a fallback for old systems, it will be removed 8/24/26
+      - cp AstrOS-installer*.raw.zst AstrOS-installer_latest_x86-64.raw.zst
       - sha256sum -- * > SHA256SUMS
       - printf '%s' "$GPG_KEY" | gpg --batch --import
       - gpg --batch --yes --pinentry-mode loopback --detach-sign --armor -o SHA256SUMS.asc SHA256SUMS
-      - cd ..
-      - rsync -aP --delete --copy-unsafe-links mkosi.output/ /mnt
-    volumes:
-      - /srv/astros/dl-astros:/mnt:z
+
+      # deploy
+      - printf '%s' "$RCLONE" > ~/.config/rclone/rclone.conf 
+      - rclone sync . r2:astros-dl
     environment:
       GPG_KEY:
         from_secret: gpg_key
+      RCLONE:
+        from_secret: rclone
