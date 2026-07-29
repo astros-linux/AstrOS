@@ -54,7 +54,7 @@ steps:
       - printf '%s' "$RCLONE" > ~/.config/rclone/rclone.conf
       - chmod 0600 ~/.config/rclone/rclone.conf
       - >-
-        rclone sync . r2:astros-dl
+        rclone copy . r2:astros-dl
         --exclude 'SHA256SUMS*'
         --exclude 'AstrOS-installer_latest_*'
         --header-upload "Cache-Control: public, max-age=31536000"
@@ -63,6 +63,16 @@ steps:
         --include 'SHA256SUMS*'
         --include 'AstrOS-installer_latest_*'
         --header-upload "Cache-Control: public, no-cache"
+
+      # cleanup: keep only the two newest versions
+      - >-
+        rclone lsf r2:astros-dl --include 'AstrOS_*_x86-64*'
+        | cut -d'_' -f2
+        | sort -run
+        | tail -n +3
+        | while read -r v; do
+        if [ -n "$${v}" ]; then rclone delete r2:astros-dl --include "*$${v}*"; fi;
+        done
     environment:
       GPG_KEY:
         from_secret: gpg_key
