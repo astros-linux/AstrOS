@@ -12,7 +12,7 @@ Please don't use the issue tracker for support questions. Those belong on our Su
 
 # Ground Rules
 
-- Contact me on Discord or in an issue for any major changes and enhancements that you are planning to make. Discuss things transparently and get feedback. This prevents wasted effort by communicating major ideas before working on them.
+- Contact a dev for any major changes and enhancements that you are planning to make. Discuss things transparently and get feedback. This prevents wasted effort by communicating major ideas before working on them.
 - Don't mix contributions. One feature belongs to a single PR, squashing multiple features / bug fixes into one contribution makes it hard to merge and review.
 - Review and build your own code to make sure it works.
 - Comment your code.
@@ -20,19 +20,20 @@ Please don't use the issue tracker for support questions. Those belong on our Su
 
 # How to report a bug
 
-If you find a major security vulnerability, DO NOT open an issue. Email contact@astros-linux.org instead.
+If you find a major security vulnerability, DO NOT open an issue. Email <contact@astros-linux.org> instead.
 
 Make use of our template when filling issues.
 
 # Community
+
 Take a look at our community channels linked at the top of our [`README`](./README.md).
 
 # Resources
 
-- https://github.com/systemd/mkosi/blob/main/mkosi/resources/man/mkosi.1.md
-- https://www.freedesktop.org/software/systemd/man/latest/systemd-sysupdate.html
-- https://www.freedesktop.org/software/systemd/man/latest/sysupdate.features.html
-- https://www.freedesktop.org/software/systemd/man/latest/sysext.conf.html
-- https://www.freedesktop.org/software/systemd/man/latest/updatectl.html
-- https://www.freedesktop.org/software/systemd/man/latest/repart.d.html
-- https://www.freedesktop.org/software/systemd/man/latest/tmpfiles.d.html
+- <https://github.com/systemd/mkosi/blob/main/mkosi/resources/man/mkosi.1.md>
+- <https://www.freedesktop.org/software/systemd/man/latest/systemd-sysupdate.html>
+- <https://www.freedesktop.org/software/systemd/man/latest/sysupdate.features.html>
+- <https://www.freedesktop.org/software/systemd/man/latest/sysext.conf.html>
+- <https://www.freedesktop.org/software/systemd/man/latest/updatectl.html>
+- <https://www.freedesktop.org/software/systemd/man/latest/repart.d.html>
+- <https://www.freedesktop.org/software/systemd/man/latest/tmpfiles.d.html>
