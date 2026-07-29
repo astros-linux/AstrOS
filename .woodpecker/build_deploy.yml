@@ -53,8 +53,16 @@ steps:
       - mkdir -p ~/.config/rclone
       - printf '%s' "$RCLONE" > ~/.config/rclone/rclone.conf
       - chmod 0600 ~/.config/rclone/rclone.conf
-      - rclone sync . r2:astros-dl --exclude 'SHA256SUMS*' --exclude 'AstrOS-installer_latest_*' --header-upload "Cache-Control: public, max-age=31536000"
-      - rclone copy . r2:astros-dl --include 'SHA256SUMS*' --include 'AstrOS-installer_latest_*' --header-upload "Cache-Control: public, no-cache"
+      - >-
+        rclone sync . r2:astros-dl
+        --exclude 'SHA256SUMS*'
+        --exclude 'AstrOS-installer_latest_*'
+        --header-upload "Cache-Control: public, max-age=31536000"
+      - >-
+        rclone copy . r2:astros-dl
+        --include 'SHA256SUMS*'
+        --include 'AstrOS-installer_latest_*'
+        --header-upload "Cache-Control: public, no-cache"
     environment:
       GPG_KEY:
         from_secret: gpg_key
