@@ -2,6 +2,9 @@
   <img src="./brand/logo/logo.svg" width="50%"/>
 </p>
 
+[![AstrOS Forgejo](https://img.shields.io/badge/AstrOS%20Forgejo-main-green?style=flat&logo=forgejo&labelColor=fff)](https://code.astros-linux.org/AstrOS/AstrOS)
+[![GitHub](https://img.shields.io/badge/GitHub-mirror-blue?style=flat&logo=github&labelColor=fff&logoColor=24292f)](https://github.com/astros-linux/AstrOS)
+
 [![status-badge](https://ci.astros-linux.org/api/badges/2/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/2)
 
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/f38pGadC2a)
