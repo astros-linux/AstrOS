@@ -2,7 +2,7 @@
   <img src="./brand/logo/logo.svg" width="50%"/>
 </p>
 
-[![status-badge](https://ci.astros-linux.org/api/badges/4/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/4)
+[![status-badge](https://ci.astros-linux.org/api/badges/2/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/2)
 
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/f38pGadC2a)
 [![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/AstrOS_Linux)
