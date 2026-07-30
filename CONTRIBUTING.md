@@ -10,6 +10,8 @@ You don't necessarily need to write code for helpful contributions. While classi
 
 Please don't use the issue tracker for support questions. Those belong on our Subreddit or Discord.
 
+Our github repo is just a mirror. Please contribute on our Forgejo Instance.
+
 # Ground Rules
 
 - Contact a dev for any major changes and enhancements that you are planning to make. Discuss things transparently and get feedback. This prevents wasted effort by communicating major ideas before working on them.
