@@ -9,6 +9,16 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# check for tpm2
+if ! systemd-analyze has-tpm2 --quiet; then
+  if ! whiptail --backtitle "$BACKTITLE" --title "No usable TPM2" --yesno \
+    "No usable TPM2 device was found.\n\nAstrOS encrypts the root partition against the TPM2 and requires one. Continuing will most likely result in a system that does not boot.\n\nContinue anyway?" \
+    0 0 --defaultno; then
+    whiptail --backtitle "$BACKTITLE" --msgbox "Installation cancelled. No changes were made." 0 0
+    exit 1
+  fi
+fi
+
 # check for the image
 IMAGE=/images/AstrOS.raw.zst
 if [[ ! -r $IMAGE ]]; then
