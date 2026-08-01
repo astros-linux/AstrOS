@@ -71,7 +71,7 @@ steps:
         | sort -run
         | tail -n +3
         | while read -r v; do
-        if [ -n "$${v}" ]; then rclone delete r2:astros-dl --include "*$${v}*"; fi;
+        if [ -n "$${v}" ]; then rclone delete r2:astros-dl --include "*_$${v}[._]*"; fi;
         done
     environment:
       GPG_KEY:
