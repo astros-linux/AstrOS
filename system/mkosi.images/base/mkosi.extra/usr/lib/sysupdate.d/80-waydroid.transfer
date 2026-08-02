@@ -1,0 +1,15 @@
+[Transfer]
+Features=waydroid
+ProtectVersion=%A
+
+[Source]
+Type=url-file
+Path=https://dl.astros-linux.org/
+MatchPattern=waydroid_@v.raw.zst
+
+[Target]
+Type=regular-file
+Path=/var/lib/extensions
+MatchPattern=waydroid_@v.raw
+Mode=0444
+InstancesMax=2

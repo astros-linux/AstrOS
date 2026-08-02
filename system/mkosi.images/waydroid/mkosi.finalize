@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+CONFEXT="$BUILDROOT/usr/lib/confexts/waydroid"
+mkdir -p "$CONFEXT"
+cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$CONFEXT/etc"
