@@ -1,3 +1,3 @@
 [Feature]
-Description=experimental: waydroid
+Description=Waydroid: A container-based approach to boot a full Android system
 Enabled=false
