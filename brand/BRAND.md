@@ -8,12 +8,13 @@ asked to follow the rules below for the brand.
 
 ## 1. The name
 
-- Always written **AstrOS** - capital `A`, lowercase `str`, capital `OS`, no space. `astros` in places where lowercase is required.
-- Not: "Astros", "AstroOS", "ASTROS", "Astros Linux", "astrOS".
+- Always written **AstrOS** or **AstrOS Linux** when needed - capital `A`, lowercase `str`, capital `OS`, no space. `astros` in places where lowercase is required.
+- Not: "Astros", "AstroOS", "ASTROS", "astrOS".
 
 ## 2. The logo
 
 ### Variants
+
 - [`Logo`](./logo/logo.png) - mark & wordmark
 - [`Mark`](./logo/mark.png)
 - [`Wordmark`](./logo/wordmark.png)
@@ -31,11 +32,13 @@ Because AstrOS ships signed images, a modified build is not the same system!!
 **It must not carry the same name.**
 
 ### 4.1 Feel free to
+
 - Use our Brand in social media / news articles while pointing at our real thing.
 - State factual compatibility like "runs on AstrOS"
 - Link to the project and use the logo to link back to official AstrOS resources.
 
 ### 4.2 Don't
+
 - Distribute a **modified** build, remix, or fork under the AstrOS name or logo.
   (You're free to distribute modified code under the GPL - just pick a different
   name and remove the AstrOS logo. This is the same "rename your fork" rule
