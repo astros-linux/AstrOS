@@ -120,7 +120,7 @@ whiptail --backtitle "$BACKTITLE" --title "Setup complete" --msgbox \
 
 Setup is complete. Welcome aboard, $USERNAME.
 
-Documentation   https://docs.astros-linux.org
+Documentation   https://astros-linux.org/astros/
 
 Update with 'updatectl update --reboot'
 

@@ -26,7 +26,7 @@
 
 ## Documentation
 
-For users and contributors, see our [Documentation](https://docs.astros-linux.org).
+For users and contributors, see our [Documentation](https://astros-linux.org/astros/).
 
 ## Credits & License
 
