@@ -1,5 +1,7 @@
 enable astros-install.service
 enable images.mount
 
+enable NetworkManager.service
+
 enable systemd-confext.service
 enable systemd-sysext.service
