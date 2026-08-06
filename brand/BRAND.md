@@ -15,7 +15,6 @@ asked to follow the rules below for the brand.
 
 - Always written **AstrOS** - capital `A`, lowercase `str`, capital `OS`, no space. `astros` in places where lowercase is required.
 - Not: "Astros", "AstroOS", "ASTROS", "astrOS".
--
 
 ## 2. The logo
 

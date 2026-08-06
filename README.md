@@ -34,6 +34,9 @@ For users and contributors, see our [Documentation](https://astros-linux.org/ast
 
 AstrOS is licensed under the **GNU General Public License v3** - see [`LICENSE`](./LICENSE).
 
+The GPLv3 does not cover the AstrOS name, logo, or other brand assets in
+[`brand`](./brand)
+
 The repart / sysupdate configuration are highly inspired from **[ParticleOS](https://github.com/systemd/particleos)** by systemd, Thanks!
 
 Thanks to the OGC Collective for the [gamescope session](https://github.com/OpenGamingCollective/gamescope-session-steam).
