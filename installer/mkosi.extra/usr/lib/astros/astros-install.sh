@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-BACKTITLE="AstrOS Linux - Installation"
+BACKTITLE="AstrOS - Installation"
 
 # rootcheck
 if [[ $EUID -ne 0 ]]; then
@@ -43,7 +43,7 @@ if [[ ${#DISK_ARGS[@]} -eq 0 ]]; then
 fi
 
 if ! DISK=$(whiptail --backtitle "$BACKTITLE" --title "Select disk" --menu \
-  "Choose the disk to install AstrOS Linux to." \
+  "Choose the disk to install AstrOS to." \
   0 0 0 "${DISK_ARGS[@]}" 3>&1 1>&2 2>&3); then
   exit 1
 fi

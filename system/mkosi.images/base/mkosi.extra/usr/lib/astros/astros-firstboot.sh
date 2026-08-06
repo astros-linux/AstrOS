@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # branding
-BACKTITLE="AstrOS Linux - First Boot Setup"
+BACKTITLE="AstrOS - First Boot Setup"
 
 read -r -d '' WORDMARK <<'EOF' || true
 ==================================

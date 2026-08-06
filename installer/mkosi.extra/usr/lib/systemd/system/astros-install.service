@@ -1,5 +1,5 @@
 [Unit]
-Description=AstrOS Linux Installer
+Description=AstrOS Installer
 # Take over the console before the login prompt appears.
 After=systemd-user-sessions.service
 Before=getty@tty1.service

@@ -1,5 +1,5 @@
 [Unit]
-Description=AstrOS Linux First Boot Setup
+Description=AstrOS First Boot Setup
 # Only run on first boot
 ConditionFirstBoot=yes
 # Take over the console before the login prompt appears.
