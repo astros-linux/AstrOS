@@ -11,7 +11,7 @@ asked to follow the rules below for the brand.
 > [!NOTE]
 > Our name is **AstrOS**. "AstrOS Linux" isn't a trademark or product name of ours, just a descriptive phrase, like saying "Ubuntu Linux".
 >
-> Linux® is the registered trademark of Linus Torvalds.
+> Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
 - Always written **AstrOS** - capital `A`, lowercase `str`, capital `OS`, no space. `astros` in places where lowercase is required.
 - Not: "Astros", "AstroOS", "ASTROS", "astrOS".
