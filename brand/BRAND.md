@@ -9,7 +9,7 @@ asked to follow the rules below for the brand.
 ## 1. The name
 
 > [!NOTE]
-> Our name is **AstrOS**. "AstrOS Linux" isn't a trademark or product name of ours, just a descriptive phrase, like saying "Ubuntu Linux".
+> Our name is **AstrOS**. "AstrOS Linux" isn't a trademark or product name of ours, just a descriptive phrase, like calling it a Linux distribution.
 >
 > Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.
 
