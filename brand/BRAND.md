@@ -34,7 +34,7 @@ Accent: `#b971fb`
 The goal of this policy is simple: **let people talk about, use, and share official AstrOS freely,
 while making sure the name only ever points at the real, unmodified thing.**
 Because AstrOS ships signed images, a modified build is not the same system!!
-**It must not carry the same name.**
+**It must not carry the same name or logo.**
 
 ### 4.1 Feel free to
 
