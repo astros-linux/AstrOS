@@ -1,0 +1,2 @@
+# workaround until https://github.com/pop-os/cosmic-comp/issues/2152#issuecomment-4147901659 is resolved upstream
+COSMIC_DISABLE_OVERLAY_SCANOUT=1
