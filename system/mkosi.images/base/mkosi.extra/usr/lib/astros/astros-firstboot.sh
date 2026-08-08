@@ -32,7 +32,7 @@ done
 KEYMAP=""
 while true; do
   KEYMAP=$(whiptail --backtitle "$BACKTITLE" --title "Keymap" --menu \
-    "Select a console keymap." 0 0 0 \
+    "Select a console keymap.\nType the first letter of a layout to jump to it." 0 0 0 \
     "${KEYMAP_MENU[@]}" 3>&1 1>&2 2>&3) || KEYMAP=""
   if [[ -z "$KEYMAP" ]]; then
     whiptail --backtitle "$BACKTITLE" --title "Keymap" --msgbox \
