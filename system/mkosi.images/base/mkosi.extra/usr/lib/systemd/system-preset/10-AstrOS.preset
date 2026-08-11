@@ -12,5 +12,6 @@ enable systemd-timesyncd.service
 enable avahi-daemon.service
 enable cups.service
 
-enable systemd-confext.service
-enable systemd-sysext.service
+# the following services are enabled via separated .conf files. E.g. /usr/lib/systemd/system/sysinit.target.d/10-astros.conf
+disable systemd-confext.service
+disable systemd-sysext.service
