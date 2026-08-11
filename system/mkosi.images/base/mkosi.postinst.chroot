@@ -20,3 +20,6 @@ EOF
 
 # https://wiki.archlinux.org/title/COSMIC#SSH_AUTH_SOCK_not_set
 systemctl enable --user gcr-ssh-agent.socket
+
+# disable soft-reboot
+ln -sfn /dev/null "$BUILDROOT/usr/lib/systemd/system/soft-reboot.target"
