@@ -16,7 +16,7 @@
 
 **AstrOS** is an immutable, secure-by-default Linux distribution built on **Arch Linux** and the **COSMIC** desktop.
 
-> [!CAUTION]
+> [!WARNING]
 > AstrOS is **beta software**.
 >
 > It is stable enough for daily use, but expect bugs and the occasional
