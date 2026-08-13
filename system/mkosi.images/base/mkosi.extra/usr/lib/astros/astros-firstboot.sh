@@ -71,9 +71,9 @@ PASS1=""
 PASS2=""
 while true; do
   PASS1=$(whiptail --backtitle "$BACKTITLE" --title "Password" --passwordbox \
-    "Enter password for '$USERNAME':" 0 0 3>&1 1>&2 2>&3) || PASS1=""
+    "Enter password for '$USERNAME':" 7 0 3>&1 1>&2 2>&3) || PASS1=""
   PASS2=$(whiptail --backtitle "$BACKTITLE" --title "Password" --passwordbox \
-    "Confirm password for '$USERNAME':" 0 0 3>&1 1>&2 2>&3) || PASS2=""
+    "Confirm password for '$USERNAME':" 7 0 3>&1 1>&2 2>&3) || PASS2=""
 
   if [[ -z "$PASS1" ]]; then
     whiptail --backtitle "$BACKTITLE" --msgbox "Password cannot be empty." 0 0
