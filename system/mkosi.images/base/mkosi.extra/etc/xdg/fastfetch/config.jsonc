@@ -1,0 +1,54 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "/usr/share/fastfetch/astros.txt",
+    "color": {
+      "1": "38;2;54;19;170",
+      "2": "38;2;73;32;182",
+      "3": "38;2;91;46;193",
+      "4": "38;2;110;59;205",
+      "5": "38;2;129;73;216",
+      "6": "38;2;148;86;228",
+      "7": "38;2;166;100;239",
+      "8": "38;2;185;113;251"
+    }
+  },
+  "display": {
+    "color": {
+      "title": "38;2;185;113;251",
+      "keys": "38;2;148;86;228"
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "display",
+    "de",
+    "wm",
+    "wmtheme",
+    "theme",
+    "icons",
+    "font",
+    "cursor",
+    "terminal",
+    "terminalfont",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "battery",
+    "poweradapter",
+    "localip",
+    "locale",
+    "break",
+    "colors"
+  ]
+}
