@@ -1,15 +1,16 @@
 [Transfer]
-Features=steam-gaming
+Features=steam-gaming gaming
 ProtectVersion=%A
 
 [Source]
 Type=url-file
 Path=https://dl.astros-linux.org/
-MatchPattern=steam-gaming_@v.raw.zst
+MatchPattern=gaming_@v.raw.zst
 
 [Target]
 Type=regular-file
 Path=/var/lib/extensions
-MatchPattern=steam-gaming_@v.raw
+MatchPattern=gaming_@v.raw \
+             steam-gaming_@v.raw
 Mode=0444
 InstancesMax=2

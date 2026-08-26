@@ -1,3 +1,3 @@
 [Feature]
-Description=Steam & SteamOS like gamescope session
+Description=DEPRECATED: use "gaming" instead
 Enabled=false

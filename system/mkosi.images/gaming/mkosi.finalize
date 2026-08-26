@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
 
-CONFEXT="$BUILDROOT/usr/lib/confexts/steam-gaming"
+CONFEXT="$BUILDROOT/usr/lib/confexts/gaming"
 mkdir -p "$CONFEXT"
 cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$CONFEXT/etc"
