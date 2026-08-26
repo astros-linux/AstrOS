@@ -45,8 +45,6 @@ steps:
       - mv ./installer/mkosi.output/AstrOS-installer*_x86-64.raw.zst ./system/mkosi.output
       - cd ./system/mkosi.output
       - cp AstrOS-installer*.raw.zst AstrOS-installer_latest_x86-64.raw.zst
-      # fallback. Will be removed October 26
-      - for f in gaming_*.raw.zst; do [ -e "$$f" ] || continue; cp "$$f" "steam-gaming_$${f#gaming_}"; done
       - sha256sum -- * > SHA256SUMS
       - printf '%s' "$GPG_KEY" | gpg --batch --import
       - gpg --batch --yes --pinentry-mode loopback --detach-sign --armor -o SHA256SUMS.asc SHA256SUMS
