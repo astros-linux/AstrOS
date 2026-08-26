@@ -24,7 +24,7 @@
 > breaking change. Keep backups of anything you care about, and please
 > [report any bugs you find](https://code.astros-linux.org/AstrOS/AstrOS/issues).
 
-[Installer](https://dl.astros-linux.org/AstrOS-installer_latest_x86-64.raw.zst)
+[Installer](https://dl.astros-linux.org/AstrOS-installer_latest_x86-64.raw.zst) [SHA256SUMS](https://dl.astros-linux.org/SHA256SUMS)
 
 ---
 
