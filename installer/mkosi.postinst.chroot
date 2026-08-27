@@ -10,6 +10,6 @@ PRETTY_NAME="AstrOS Installer"
 ID="astros"
 ID_LIKE="$ID"
 ANSI_COLOR="38;2;185;113;251"
-HOME_URL="https://astros-linux.org"
+HOME_URL="https://astros-linux.org/"
 EOF
 )
