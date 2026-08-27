@@ -1,1 +1,1 @@
-The Installer will search for the image in here. It will copied to this directory by the ci in our main repo
+The Installer will search for the image in here. It will be copied to this directory by the CI in our main repo
