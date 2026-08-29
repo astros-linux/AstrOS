@@ -8,7 +8,7 @@
 [![Issues](https://code.astros-linux.org/AstrOS/AstrOS/badges/issues/open.svg?style=flat)](https://code.astros-linux.org/AstrOS/AstrOS/issues?state=open)
 [![GitHub](https://img.shields.io/badge/GitHub-mirror-blue?style=flat&logo=github&labelColor=fff&logoColor=24292f)](https://github.com/astros-linux/AstrOS)
 
-[![status-badge](https://ci.astros-linux.org/api/badges/2/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/2)
+[![status-badge](https://ci.astros-linux.org/api/badges/1/status.svg?events=push%2Ccron%2Cmanual)](https://ci.astros-linux.org/repos/1)
 
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/f38pGadC2a)
 [![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/AstrOS_Linux)
