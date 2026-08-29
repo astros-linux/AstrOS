@@ -34,6 +34,9 @@ For users and contributors, see our [Documentation](https://astros-linux.org/ast
 
 ## Credits & License
 
+> [!NOTE]
+> Submodules have their own license, which is separate from the main license.
+
 AstrOS is licensed under the **GNU General Public License v3** - see [`LICENSE`](./LICENSE).
 
 The GPLv3 does not cover the AstrOS name, logo, or other brand assets in
