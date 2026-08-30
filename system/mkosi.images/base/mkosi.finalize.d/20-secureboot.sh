@@ -9,7 +9,6 @@ CRT="$SRCDIR/mkosi.crt"
 OBJECTS="$SRCDIR/mkosi.images/base/submodules/AstrOS_secureboot_objects/PreSignedObjects"
 SBO="$SRCDIR/mkosi.images/base/submodules/AstrOS_secureboot_objects"
 KEYS="$BUILDROOT/boot/loader/keys"
-RECOVERY_COPY="$BUILDROOT/usr/lib/astros/recovery/boot/loader/keys"
 
 install -D --mode=0644 "$SBO/License.txt" "$BUILDROOT/usr/share/licenses/secureboot_objects/LICENSE"
 
@@ -57,6 +56,3 @@ for name in astros astros+microsoft; do
   sbvarsign --attr "$ATTR" --key "$KEY" --cert "$CRT" --output "$KEYS/$name/KEK.auth" KEK "$WORK/KEK.esl"
   sbvarsign --attr "$ATTR" --key "$KEY" --cert "$CRT" --output "$KEYS/$name/db.auth" db "$WORK/db.esl"
 done
-
-mkdir -p "$RECOVERY_COPY"
-cp --archive --no-target-directory --update=none "$BUILDROOT/boot/loader/keys" "$RECOVERY_COPY"
