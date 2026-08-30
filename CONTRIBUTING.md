@@ -39,3 +39,4 @@ Take a look at our community channels linked at the top of our [`README`](./READ
 - <https://www.freedesktop.org/software/systemd/man/latest/updatectl.html>
 - <https://www.freedesktop.org/software/systemd/man/latest/repart.d.html>
 - <https://www.freedesktop.org/software/systemd/man/latest/tmpfiles.d.html>
+- <https://www.freedesktop.org/software/systemd/man/latest/loader.conf.html?>

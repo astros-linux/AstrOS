@@ -4,3 +4,6 @@
 [submodule "system/mkosi.images/gaming/submodules/AstrOS-gamescope-session"]
 	path = system/mkosi.images/gaming/submodules/AstrOS-gamescope-session
 	url = https://github.com/astros-linux/AstrOS-gamescope-session.git
+[submodule "system/mkosi.images/base/submodules/AstrOS_secureboot_objects"]
+	path = system/mkosi.images/base/submodules/AstrOS_secureboot_objects
+	url = https://code.astros-linux.org/AstrOS/AstrOS_secureboot_objects.git
