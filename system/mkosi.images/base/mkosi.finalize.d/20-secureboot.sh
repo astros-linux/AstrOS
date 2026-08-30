@@ -7,7 +7,10 @@ set -e
 KEY="$SRCDIR/mkosi.key"
 CRT="$SRCDIR/mkosi.crt"
 OBJECTS="$SRCDIR/mkosi.images/base/submodules/AstrOS_secureboot_objects/PreSignedObjects"
+SBO="$SRCDIR/mkosi.images/base/submodules/AstrOS_secureboot_objects"
 KEYS="$BUILDROOT/boot/loader/keys"
+
+install -D --mode=0644 "$SBO/License.txt" "$BUILDROOT/usr/share/licenses/secureboot_objects/LICENSE"
 
 ASTROS_UUID="646273a4-e591-4e0a-8e3f-2eb6c106c5f8"
 MICROSOFT_UUID="77fa9abd-0359-4d32-bd60-28f4e78f784b"
