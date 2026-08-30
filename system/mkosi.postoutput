@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+
+# repart strips the NUL padding from the split verity-sig artifact, so a shorter
+# signature leaves the previous ones tail behind
+# 16384 = VERITY_SIG_SIZE in repart.c
+
+for f in "$OUTPUTDIR"/*verity-sig*.raw.zst; do
+  zstd --quiet --decompress --rm -- "$f"
+  truncate --size=16384 -- "${f%.zst}"
+  zstd --quiet --rm -- "${f%.zst}"
+done
