@@ -31,6 +31,7 @@ steps:
       - pacman -Syu --noconfirm mkosi
       - cp ./system/mkosi.version ./installer/
       - cp ./system/mkosi.output/AstrOS*_x86-64.raw.zst ./installer/mkosi.extra/images/AstrOS.raw.zst
+      - cd ./installer/mkosi.extra/images/ && sha256sum AstrOS.raw.zst > AstrOS.raw.zst.sha256 && cd -
       - cd installer
       - mkosi -f --workspace-directory=/woodpecker/mkosi.workspace
 

@@ -9,4 +9,4 @@ mkosi.crt
 mkosi.version
 mkosi.rootpw
 .mkosi-private
-installer/mkosi.extra/images/*.raw.zst
+installer/mkosi.extra/images/*.raw.zst*
