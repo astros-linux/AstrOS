@@ -25,6 +25,20 @@ if [[ ! -r $IMAGE ]]; then
   whiptail --backtitle "$BACKTITLE" --msgbox "Installation image not found: $IMAGE" 0 0
   exit 1
 fi
+if [[ ! -r $IMAGE.sha256 ]]; then
+  whiptail --backtitle "$BACKTITLE" --msgbox "Checksum file not found: $IMAGE.sha256" 0 0
+  exit 1
+fi
+
+# verify the image
+whiptail --backtitle "$BACKTITLE" --title "Verifying image" --infobox \
+  "Verifying the integrity of the installation image.\n\nThis may take a moment." 0 0
+if ! (cd "$(dirname "$IMAGE")" && sha256sum --quiet -c "$(basename "$IMAGE").sha256"); then
+  whiptail --backtitle "$BACKTITLE" --title "Checksum mismatch" --msgbox \
+    "The installation image failed verification.\n\nThe image is corrupt or has been tampered with.\n\nInstallation cancelled. No changes were made." \
+    0 0
+  exit 1
+fi
 
 # disk selection
 # determine the live usb disk
