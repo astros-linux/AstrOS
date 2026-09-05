@@ -31,13 +31,17 @@ if [[ ! -r $IMAGE.sha256 ]]; then
 fi
 
 # verify the image
-whiptail --backtitle "$BACKTITLE" --title "Verifying image" --infobox \
-  "Verifying the integrity of the installation image.\n\nThis may take a moment." 0 0
-if ! (cd "$(dirname "$IMAGE")" && sha256sum --quiet -c "$(basename "$IMAGE").sha256"); then
-  whiptail --backtitle "$BACKTITLE" --title "Checksum mismatch" --msgbox \
-    "The installation image failed verification.\n\nThe image is corrupt or has been tampered with.\n\nInstallation cancelled. No changes were made." \
-    0 0
-  exit 1
+if whiptail --backtitle "$BACKTITLE" --title "Verify image" --yesno \
+  "Verify the integrity of the installation image?\n\nThis may take a moment, but it detects a corrupt image before anything is written to disk." \
+  0 0; then
+  whiptail --backtitle "$BACKTITLE" --title "Verifying image" --infobox \
+    "Verifying the integrity of the installation image.\n\nThis may take a moment." 0 0
+  if ! (cd "$(dirname "$IMAGE")" && sha256sum --quiet -c "$(basename "$IMAGE").sha256"); then
+    whiptail --backtitle "$BACKTITLE" --title "Checksum mismatch" --msgbox \
+      "The installation image failed verification.\n\nInstallation cancelled. No changes were made." \
+      0 0
+    exit 1
+  fi
 fi
 
 # disk selection
