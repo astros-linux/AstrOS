@@ -16,7 +16,7 @@ DOCUMENTATION_URL="https://astros-linux.org/astros/"
 EOF
 )
 
-# https://wiki.archlinux.org/title/COSMIC#SSH_AUTH_SOCK_not_set
+# https://wiki.archlinux.org/title/COSMIC#SSH_AUTH_SOCK_not_set https://wiki.archlinux.org/title/Oo7#Starting_the_daemon
 systemctl enable --global gcr-ssh-agent.socket oo7-daemon.service
 
 # disable soft-reboot (base /etc is a confext)
