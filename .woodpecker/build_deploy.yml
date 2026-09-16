@@ -9,6 +9,7 @@ when:
 steps:
   - name: build system
     image: docker.io/library/archlinux
+    pull: true
     commands:
       - umask 022
       - chmod -R go-w .
