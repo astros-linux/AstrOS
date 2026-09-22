@@ -1,5 +1,5 @@
 [Unit]
-Description=AstrOS image mount
+Description=Installer image mount
 
 [Mount]
 What=/dev/disk/by-partlabel/images

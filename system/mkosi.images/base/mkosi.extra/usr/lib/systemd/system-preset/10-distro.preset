@@ -1,6 +1,6 @@
-enable astros-firstboot.service
-enable astros-flathub-fix.service
-enable astros-gsettings-schemas-fix.service
+enable distro-firstboot.service
+enable flathub-fix.service
+enable gsettings-schemas-fix.service
 
 enable NetworkManager.service
 enable NetworkManager-wait-online.service
@@ -15,6 +15,6 @@ enable avahi-daemon.service
 enable cups.service
 enable apparmor.service
 
-# the following services are enabled via separated .conf files. E.g. /usr/lib/systemd/system/sysinit.target.d/10-astros.conf
+# the following services are enabled via separated .conf files. E.g. /usr/lib/systemd/system/sysinit.target.d/10-extensions.conf
 disable systemd-confext.service
 disable systemd-sysext.service

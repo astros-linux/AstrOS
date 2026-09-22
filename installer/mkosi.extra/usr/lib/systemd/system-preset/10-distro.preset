@@ -1,4 +1,4 @@
-enable astros-install.service
+enable distro-install.service
 enable images.mount
 
 enable NetworkManager.service

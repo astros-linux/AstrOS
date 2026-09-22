@@ -1,7 +1,7 @@
 # hide system partitions and sysexts from udisks so COSMIC Files doesn't list them
 
 # only handle block devices
-SUBSYSTEM!="block", GOTO="astros_hide_end"
+SUBSYSTEM!="block", GOTO="hide_system_volumes_end"
 
 # https://uapi-group.org/specifications/specs/discoverable_partitions_specification/#defined-partition-type-uuids
 # usr, usr-verity, usr-verity-sig (x86-64)
@@ -13,4 +13,4 @@ KERNEL=="loop*", ATTRS{loop/backing_file}=="/var/lib/extensions/*|/run/extension
 # all dm-verity devices
 KERNEL=="dm-*", ATTR{dm/uuid}=="CRYPT-VERITY-*", ENV{UDISKS_IGNORE}="1"
 
-LABEL="astros_hide_end"
+LABEL="hide_system_volumes_end"
