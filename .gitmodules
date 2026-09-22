@@ -1,8 +1,8 @@
-[submodule "system/mkosi.images/gaming/submodules/AstrOS-gamescope-session-steam"]
-	path = system/mkosi.images/gaming/submodules/AstrOS-gamescope-session-steam
+[submodule "system/mkosi.images/gaming/submodules/gamescope-session-steam"]
+	path = system/mkosi.images/gaming/submodules/gamescope-session-steam
 	url = https://github.com/OpenGamingCollective/gamescope-session-steam.git
-[submodule "system/mkosi.images/gaming/submodules/AstrOS-gamescope-session"]
-	path = system/mkosi.images/gaming/submodules/AstrOS-gamescope-session
+[submodule "system/mkosi.images/gaming/submodules/gamescope-session"]
+	path = system/mkosi.images/gaming/submodules/gamescope-session
 	url = https://github.com/OpenGamingCollective/gamescope-session.git
 [submodule "system/mkosi.images/base/submodules/AstrOS_secureboot_objects"]
 	path = system/mkosi.images/base/submodules/AstrOS_secureboot_objects
