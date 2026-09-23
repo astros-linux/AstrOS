@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# mask legacy monolithic integration
+systemctl mask libvirtd.service libvirtd{,-ro,-admin,-tcp,-tls}.socket
+
+# enable modular libvirt daemons
+for drv in qemu interface network nodedev nwfilter secret storage; do
+  systemctl enable virt${drv}d.service
+  systemctl enable virt${drv}d{,-ro,-admin}.socket
+done
