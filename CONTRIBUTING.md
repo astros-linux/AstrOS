@@ -3,12 +3,12 @@
 First off, thank you for considering contributing to AstrOS. It's people like you that make AstrOS what it is.
 Please follow these guidelines.
 
-Consider joining our [Discord server](https://discord.gg/f38pGadC2a) for communicating, contribution ideas, and discussing about the project.
+Consider joining our socials for communicating, contribution ideas, and discussing about the project.
 
 As a GPLv3 project, we'd love to receive contributions from our community.
 You don't necessarily need to write code for helpful contributions. While classic PR's are welcomed, contributing also means writing tutorials, blog posts, documentations, submitting bug / feature requests, and sharing the project to increase our community.
 
-Please don't use the issue tracker for support questions. Those belong on our Subreddit or Discord.
+Please don't use the issue tracker for support questions. Those belong on socials.
 
 Our github repo is just a mirror. Please contribute on our Forgejo Instance.
 

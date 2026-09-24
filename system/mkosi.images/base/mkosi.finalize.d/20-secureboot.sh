@@ -2,17 +2,17 @@
 set -e
 
 # build keys for /loader/keys/
-# two sets: 'astros' for our own custom keys only and 'astros+microsoft' for our own custom keys plus the Microsoft DB/KEK certs.
+# two sets: 'custom' for our own custom keys only and 'custom+microsoft' for our own custom keys plus the Microsoft DB/KEK certs.
 
 KEY="$SRCDIR/mkosi.key"
 CRT="$SRCDIR/mkosi.crt"
-OBJECTS="$SRCDIR/mkosi.images/base/submodules/AstrOS_secureboot_objects/PreSignedObjects"
-SBO="$SRCDIR/mkosi.images/base/submodules/AstrOS_secureboot_objects"
+OBJECTS="$SRCDIR/mkosi.images/base/submodules/secureboot_objects/PreSignedObjects"
+SBO="$SRCDIR/mkosi.images/base/submodules/secureboot_objects"
 KEYS="$BUILDROOT/boot/loader/keys"
 
 install -D --mode=0644 "$SBO/License.txt" "$BUILDROOT/usr/share/licenses/secureboot_objects/LICENSE"
 
-ASTROS_UUID="646273a4-e591-4e0a-8e3f-2eb6c106c5f8"
+CUSTOM_UUID="646273a4-e591-4e0a-8e3f-2eb6c106c5f8"
 MICROSOFT_UUID="77fa9abd-0359-4d32-bd60-28f4e78f784b"
 ATTR="NON_VOLATILE,BOOTSERVICE_ACCESS,RUNTIME_ACCESS,TIME_BASED_AUTHENTICATED_WRITE_ACCESS"
 
@@ -27,8 +27,8 @@ WORK="$(mktemp --directory)"
 trap 'rm -rf "$WORK"' EXIT
 
 # convert from PEM to DER
-openssl x509 -outform DER -in "$CRT" -out "$WORK/astros.der"
-sbsiglist --owner "$ASTROS_UUID" --type x509 --output "$WORK/astros.esl" "$WORK/astros.der"
+openssl x509 -outform DER -in "$CRT" -out "$WORK/custom.der"
+sbsiglist --owner "$CUSTOM_UUID" --type x509 --output "$WORK/custom.esl" "$WORK/custom.der"
 
 # generate microsoft.db/KEK.esl
 for cert in "$OBJECTS"/DB/Certificates/*.der; do
@@ -42,17 +42,17 @@ for cert in "$OBJECTS"/KEK/Certificates/*.der; do
 done
 
 # the PK is always only ours, the Microsoft certs are added to db and KEK when the name matches
-for name in astros astros+microsoft; do
-  cp "$WORK/astros.esl" "$WORK/db.esl"
-  cp "$WORK/astros.esl" "$WORK/KEK.esl"
+for name in custom custom+microsoft; do
+  cp "$WORK/custom.esl" "$WORK/db.esl"
+  cp "$WORK/custom.esl" "$WORK/KEK.esl"
 
-  if [[ "$name" == "astros+microsoft" ]]; then
+  if [[ "$name" == "custom+microsoft" ]]; then
     cat "$WORK/microsoft.db.esl" >>"$WORK/db.esl"
     cat "$WORK/microsoft.KEK.esl" >>"$WORK/KEK.esl"
   fi
 
   mkdir --parents "$KEYS/$name"
-  sbvarsign --attr "$ATTR" --key "$KEY" --cert "$CRT" --output "$KEYS/$name/PK.auth" PK "$WORK/astros.esl"
+  sbvarsign --attr "$ATTR" --key "$KEY" --cert "$CRT" --output "$KEYS/$name/PK.auth" PK "$WORK/custom.esl"
   sbvarsign --attr "$ATTR" --key "$KEY" --cert "$CRT" --output "$KEYS/$name/KEK.auth" KEK "$WORK/KEK.esl"
   sbvarsign --attr "$ATTR" --key "$KEY" --cert "$CRT" --output "$KEYS/$name/db.auth" db "$WORK/db.esl"
 done

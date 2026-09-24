@@ -2,12 +2,12 @@
 Description=Refresh appstream for COSMIC Store
 Wants=network-online.target
 After=network-online.target
-ConditionPathExists=!/var/lib/astros-flathub-fix.done
+ConditionPathExists=!/var/lib/flathub-fix.done
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/flatpak update --appstream
-ExecStartPost=/usr/bin/touch /var/lib/astros-flathub-fix.done
+ExecStartPost=/usr/bin/touch /var/lib/flathub-fix.done
 Restart=on-failure
 RestartSec=30
 
