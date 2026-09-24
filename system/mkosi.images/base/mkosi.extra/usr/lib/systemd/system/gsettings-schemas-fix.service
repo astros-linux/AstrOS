@@ -13,8 +13,8 @@ RemainAfterExit=yes
 RuntimeDirectory=gsettings-schemas
 ExecStart=/usr/bin/glib-compile-schemas --targetdir=/run/gsettings-schemas /usr/share/glib-2.0/schemas
 ExecStart=/usr/bin/mount --bind /run/gsettings-schemas/gschemas.compiled /usr/share/glib-2.0/schemas/gschemas.compiled
-ExecStop=-/usr/bin/umount /usr/share/glib-2.0/schemas/gschemas.compiled
-ExecReload=-/usr/bin/umount /usr/share/glib-2.0/schemas/gschemas.compiled
+ExecStop=-/usr/bin/umount --lazy /usr/share/glib-2.0/schemas/gschemas.compiled
+ExecReload=-/usr/bin/umount --lazy /usr/share/glib-2.0/schemas/gschemas.compiled
 ExecReload=/usr/bin/glib-compile-schemas --targetdir=/run/gsettings-schemas /usr/share/glib-2.0/schemas
 ExecReload=/usr/bin/mount --bind /run/gsettings-schemas/gschemas.compiled /usr/share/glib-2.0/schemas/gschemas.compiled
 
