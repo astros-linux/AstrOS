@@ -3,8 +3,9 @@ Description=Update & Cleanup user Flatpaks
 
 [Service]
 Type=oneshot
-ExecCondition=/usr/bin/nm-online -q -t 120
 ExecCondition=/bin/sh -c '! /usr/bin/systemd-ac-power --low'
+ExecCondition=/usr/bin/nm-online -q -t 120
+ExecCondition=/bin/sh -c '! busctl get-property org.freedesktop.NetworkManager /org/freedesktop/NetworkManager org.freedesktop.NetworkManager Metered | grep -qE "^u (1|3)$"'
 ExecStart=/usr/bin/flatpak update --user --noninteractive --assumeyes
 ExecStartPost=/usr/bin/flatpak uninstall --user --unused --noninteractive --assumeyes
 TimeoutStartSec=1h
