@@ -1,5 +1,6 @@
 enable distro-firstboot.service
 enable flathub-fix.service
+enable flatpak-update.timer
 enable gsettings-schemas-fix.service
 
 enable NetworkManager.service

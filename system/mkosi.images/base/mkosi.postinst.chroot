@@ -17,7 +17,7 @@ EOF
 )
 
 # https://wiki.archlinux.org/title/COSMIC#SSH_AUTH_SOCK_not_set
-systemctl enable --user gcr-ssh-agent.socket
+systemctl enable --global gcr-ssh-agent.socket flatpak-update.timer
 
 # disable soft-reboot (base /etc is a confext)
 ln -sf /dev/null /usr/lib/systemd/system/soft-reboot.target
