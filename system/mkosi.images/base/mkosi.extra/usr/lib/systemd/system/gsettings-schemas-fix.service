@@ -1,0 +1,22 @@
+[Unit]
+Description=Recompile GSettings schemas across merged /usr (base + sysexts)
+# sysext installed gtk apps won't open without a recompiled gsettings schema
+After=systemd-sysext.service local-fs.target
+PartOf=systemd-sysext.service
+ReloadPropagatedFrom=systemd-sysext.service
+ConditionPathIsDirectory=/usr/share/glib-2.0/schemas
+
+[Service]
+Type=oneshot
+# temporary dir on tmpfs; persists while the unit stays active.
+RemainAfterExit=yes
+RuntimeDirectory=gsettings-schemas
+ExecStart=/usr/bin/glib-compile-schemas --targetdir=/run/gsettings-schemas /usr/share/glib-2.0/schemas
+ExecStart=/usr/bin/mount --bind /run/gsettings-schemas/gschemas.compiled /usr/share/glib-2.0/schemas/gschemas.compiled
+ExecStop=-/usr/bin/umount --lazy /usr/share/glib-2.0/schemas/gschemas.compiled
+ExecReload=-/usr/bin/umount --lazy /usr/share/glib-2.0/schemas/gschemas.compiled
+ExecReload=/usr/bin/glib-compile-schemas --targetdir=/run/gsettings-schemas /usr/share/glib-2.0/schemas
+ExecReload=/usr/bin/mount --bind /run/gsettings-schemas/gschemas.compiled /usr/share/glib-2.0/schemas/gschemas.compiled
+
+[Install]
+WantedBy=multi-user.target

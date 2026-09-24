@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-BACKTITLE="AstrOS - Installation"
+BACKTITLE="$(. /etc/os-release && echo "${PRETTY_NAME:-Installer}")"
 
 # rootcheck
 if [[ $EUID -ne 0 ]]; then
@@ -12,7 +12,7 @@ fi
 # check for tpm2
 if ! systemd-analyze has-tpm2 --quiet; then
   if ! whiptail --backtitle "$BACKTITLE" --title "No usable TPM2" --yesno \
-    "No usable TPM2 device was found.\n\nAstrOS encrypts the root partition against the TPM2 and requires one. Continuing will most likely result in a system that does not boot.\n\nContinue anyway?" \
+    "No usable TPM2 device was found.\n\nThe root partition is encrypted against the TPM2, so one is required. Continuing will most likely result in a system that does not boot.\n\nContinue anyway?" \
     0 0 --defaultno; then
     whiptail --backtitle "$BACKTITLE" --msgbox "Installation cancelled. No changes were made." 0 0
     exit 1
@@ -61,7 +61,7 @@ if [[ ${#DISK_ARGS[@]} -eq 0 ]]; then
 fi
 
 if ! DISK=$(whiptail --backtitle "$BACKTITLE" --title "Select disk" --menu \
-  "Choose the disk to install AstrOS to." \
+  "Choose the disk to install to." \
   0 0 0 "${DISK_ARGS[@]}" 3>&1 1>&2 2>&3); then
   exit 1
 fi

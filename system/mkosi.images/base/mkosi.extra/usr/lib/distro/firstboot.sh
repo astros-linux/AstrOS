@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # branding
-BACKTITLE="AstrOS - First Boot Setup"
+BACKTITLE="$(. /etc/os-release && echo "${PRETTY_NAME:-Linux}") - First Boot Setup"
 
 read -r -d '' WORDMARK <<'EOF' || true
 ==================================
@@ -115,12 +115,13 @@ else
 fi
 
 # done
+DOCS_URL="$(. /etc/os-release && echo "${DOCUMENTATION_URL:-}")"
 whiptail --backtitle "$BACKTITLE" --title "Setup complete" --msgbox \
   "$WORDMARK
 
 Setup is complete. Welcome aboard, $USERNAME.
 
-Documentation   https://astros-linux.org/astros/
+Documentation   $DOCS_URL
 
 Update with 'updatectl update --reboot'
 

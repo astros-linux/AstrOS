@@ -17,7 +17,7 @@ EOF
 )
 
 # https://wiki.archlinux.org/title/COSMIC#SSH_AUTH_SOCK_not_set https://wiki.archlinux.org/title/Oo7#Starting_the_daemon
-systemctl enable --global gcr-ssh-agent.socket oo7-daemon.service
+systemctl enable --global gcr-ssh-agent.socket oo7-daemon.service flatpak-update.timer
 
 # disable soft-reboot (base /etc is a confext)
 ln -sf /dev/null /usr/lib/systemd/system/soft-reboot.target
