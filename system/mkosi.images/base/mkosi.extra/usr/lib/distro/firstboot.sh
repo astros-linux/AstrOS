@@ -91,21 +91,6 @@ useradd -m "$USERNAME"
 usermod -aG wheel "$USERNAME"
 echo "$USERNAME:$PASS1" | chpasswd
 
-# workaround until https://github.com/pop-os/cosmic-greeter/pull/553 lands in arch
-mkdir -p "/home/$USERNAME/.config/cosmic/com.system76.CosmicComp/v1"
-cat >"/home/$USERNAME/.config/cosmic/com.system76.CosmicComp/v1/xkb_config" <<'EOF'
-(
-    rules: "",
-    model: "",
-    layout: "us",
-    variant: "",
-    options: None,
-    repeat_delay: 600,
-    repeat_rate: 25,
-)
-EOF
-chown -R "$USERNAME:" "/home/$USERNAME/.config"
-
 # luks recovery key
 ## enroll a recovery key, unlocked via the already-enrolled TPM2 device
 if RECOVERY_KEY=$(systemd-cryptenroll --recovery-key --unlock-tpm2-device=auto \
