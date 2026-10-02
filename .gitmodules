@@ -7,3 +7,6 @@
 [submodule "system/mkosi.images/base/submodules/secureboot_objects"]
 	path = system/mkosi.images/base/submodules/secureboot_objects
 	url = https://code.astros-linux.org/AstrOS/secureboot_objects.git
+[submodule "tine"]
+	path = tine
+	url = https://github.com/amutable-systems/tine
