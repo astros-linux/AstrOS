@@ -93,7 +93,7 @@ echo "$USERNAME:$PASS1" | chpasswd
 
 # luks recovery key
 ## enroll a recovery key, unlocked via the already-enrolled TPM2 device
-if RECOVERY_KEY=$(systemd-cryptenroll --recovery-key --unlock-tpm2-device=auto \
+if RECOVERY_KEY=$(PASSWORD=astros systemd-cryptenroll --recovery-key \
   /dev/disk/by-label/luks-AstrOS-root 2>/dev/null); then
 
   ## build the message: a note, the QR code, then the key in plain text
