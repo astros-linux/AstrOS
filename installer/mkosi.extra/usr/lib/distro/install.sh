@@ -74,9 +74,15 @@ if ! whiptail --backtitle "$BACKTITLE" --title "Confirm disk wipe" --yesno \
   exit 1
 fi
 
-# wipe & dd the image to the selected disk
-wipefs -a "$DISK"
-dd if="$IMAGE" of="$DISK" bs=4M conv=fsync status=progress
+# wipe & copy the image partitions to the selected disk
+DEFS=$(mktemp -d)
+systemd-repart \
+  --dry-run=no \
+  --empty=force \
+  --seed=random \
+  --definitions="$DEFS" \
+  --copy-from="$IMAGE" \
+  "$DISK"
 
 # reboot
 whiptail --backtitle "$BACKTITLE" --msgbox "Installation complete. Reboot now" 0 0
