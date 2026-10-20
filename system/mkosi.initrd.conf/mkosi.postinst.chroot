@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+# revert upstream ordering to allow our own for embedded confexts https://github.com/systemd/systemd/commit/7197b862b2a132ea044fed59d914d5eb3e8ae9dd
+sed -i '/^After=systemd-confext-sysroot\.service$/d' /usr/lib/systemd/system/systemd-sysext-sysroot.service
