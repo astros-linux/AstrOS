@@ -13,3 +13,5 @@ MatchPattern=%M_@v_verity_sig
 MatchPartitionType=usr-verity-sig
 PartitionFlags=0
 ReadOnly=1
+# EBUSY error - THIS IS A TEMP HOT FIX
+PartitionZeroFill=no
