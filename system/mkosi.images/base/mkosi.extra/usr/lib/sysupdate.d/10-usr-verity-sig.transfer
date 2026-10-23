@@ -13,5 +13,6 @@ MatchPattern=%M_@v_verity_sig
 MatchPartitionType=usr-verity-sig
 PartitionFlags=0
 ReadOnly=1
-# EBUSY error - THIS IS A TEMP HOT FIX
+# EBUSY error - THIS IS A TEMP HOT FIX (systemd#44317)
+# while this is set, rotating mkosi.key re-triggers systemd#43567
 PartitionZeroFill=no
