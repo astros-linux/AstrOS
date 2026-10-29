@@ -20,7 +20,7 @@ if ! systemd-analyze has-tpm2 --quiet; then
 fi
 
 # check for the image
-IMAGE=/images/AstrOS.raw.zst
+IMAGE=/images/AstrOS.raw
 if [[ ! -r $IMAGE ]]; then
   whiptail --backtitle "$BACKTITLE" --msgbox "Installation image not found: $IMAGE" 0 0
   exit 1
@@ -74,9 +74,15 @@ if ! whiptail --backtitle "$BACKTITLE" --title "Confirm disk wipe" --yesno \
   exit 1
 fi
 
-# wipe & dd the image to the selected disk
-wipefs -a "$DISK"
-unzstd -c "$IMAGE" | dd of="$DISK" bs=4M conv=fsync status=progress
+# wipe & copy the image partitions to the selected disk
+DEFS=$(mktemp -d)
+systemd-repart \
+  --dry-run=no \
+  --empty=force \
+  --seed=random \
+  --definitions="$DEFS" \
+  --copy-from="$IMAGE" \
+  "$DISK"
 
 # reboot
 whiptail --backtitle "$BACKTITLE" --msgbox "Installation complete. Reboot now" 0 0
