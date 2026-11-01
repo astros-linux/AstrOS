@@ -1,18 +1,18 @@
 [Unit]
 Description=Installer
-# Take over the console before the login prompt appears.
+# take over the console before the login prompt appears.
 After=systemd-user-sessions.service
 Before=getty@tty1.service
 Conflicts=getty@tty1.service
 
-# Power off on failure
+# power off on failure
 FailureAction=poweroff
 
 [Service]
 Type=oneshot
 ExecStart=/usr/lib/distro/install.sh
 
-# Bind the process to tty1 so whiptail has a usable terminal.
+# bind the process to tty1 so whiptail has a usable terminal.
 StandardInput=tty-force
 StandardOutput=tty
 StandardError=tty

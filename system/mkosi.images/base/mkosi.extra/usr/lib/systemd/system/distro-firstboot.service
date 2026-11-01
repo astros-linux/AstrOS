@@ -1,8 +1,8 @@
 [Unit]
 Description=First Boot Setup
-# Only run on first boot
+# only run on first boot
 ConditionFirstBoot=yes
-# Take over the console before the login prompt appears.
+# take over the console before the login prompt appears.
 After=systemd-user-sessions.service
 Before=getty@tty1.service
 Before=cosmic-greeter.service
@@ -14,7 +14,7 @@ Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/lib/distro/firstboot.sh
 
-# Bind the process to tty1 so whiptail has a usable terminal.
+# bind the process to tty1 so whiptail has a usable terminal.
 StandardInput=tty-force
 StandardOutput=tty
 StandardError=tty

@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 # build keys for /loader/keys/
 # two sets: 'custom' for our own custom keys only and 'custom+microsoft' for our own custom keys plus the Microsoft DB/KEK certs.

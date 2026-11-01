@@ -92,7 +92,7 @@ usermod -aG wheel "$USERNAME"
 echo "$USERNAME:$PASS1" | chpasswd
 
 # luks recovery key
-## enrolled in the initrd by distro-recovery-key.service
+## enrolled in the initrd by the systemd-cryptenroll-firstboot.service drop-in
 if [[ -s /run/distro-recovery-key ]]; then
   RECOVERY_KEY=$(</run/distro-recovery-key)
   rm -f /run/distro-recovery-key

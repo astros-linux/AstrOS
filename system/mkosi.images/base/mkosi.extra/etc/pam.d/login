@@ -1,7 +1,7 @@
+#%PAM-1.0
+
 # this is required for gnome-keyring to work with cosmic-greeter
 # https://gitlab.archlinux.org/archlinux/packaging/packages/cosmic-greeter/-/work_items/6
-
-#%PAM-1.0
 
 auth       requisite    pam_nologin.so
 auth       include      system-local-login
@@ -10,4 +10,3 @@ account    include      system-local-login
 session    include      system-local-login
 session    optional     pam_gnome_keyring.so auto_start
 password   include      system-local-login
-
