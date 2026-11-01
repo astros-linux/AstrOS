@@ -6,6 +6,8 @@ mkosi.tools/
 mkosi.tools.manifest
 mkosi.key
 mkosi.crt
+mkosi.pcr.key
+mkosi.pcr.crt
 mkosi.version
 mkosi.rootpw
 .mkosi-private
