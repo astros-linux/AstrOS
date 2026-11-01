@@ -2,7 +2,7 @@
 # enroll recovery key for fresh instalsl
 set -euo pipefail
 
-DEV=/dev/disk/by-label/luks-AstrOS-root
+DEV=/dev/disk/by-designator/root-luks
 
 udevadm wait --timeout=30 "$DEV"
 
