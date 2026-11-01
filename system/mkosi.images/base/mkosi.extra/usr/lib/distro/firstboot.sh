@@ -112,7 +112,7 @@ ${RECOVERY_KEY}"
     "$MESSAGE" 0 0
 else
   whiptail --backtitle "$BACKTITLE" --msgbox \
-    "No recovery key was enrolled for the encrypted disk." 0 0
+    "No recovery key was enrolled for the encrypted disk. REACH OUT TO US AND DO NOT USE THIS SYSTEM IN PRODUCTION!" 0 0
 fi
 
 # done
