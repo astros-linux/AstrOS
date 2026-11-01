@@ -4,4 +4,4 @@ set -e
 CONFEXT="$BUILDROOT/usr/lib/confexts/factory"
 mkdir -p "$CONFEXT"
 cp --archive --no-target-directory --update=none "$BUILDROOT/etc" "$CONFEXT/etc"
-rm "$CONFEXT/etc/machine-id"
+rm -f "$CONFEXT/etc/machine-id"
