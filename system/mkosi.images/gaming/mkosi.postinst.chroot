@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+
+# branding
+cat >/etc/lsb-release <<EOF
+DISTRIB_ID="AstrOS"
+DISTRIB_RELEASE="$IMAGE_VERSION"
+DISTRIB_DESCRIPTION="AstrOS"
+EOF

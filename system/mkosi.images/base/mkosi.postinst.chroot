@@ -16,12 +16,6 @@ DOCUMENTATION_URL="https://astros-linux.org/astros/"
 EOF
 )
 
-cat >/etc/lsb-release <<EOF
-DISTRIB_ID="AstrOS"
-DISTRIB_RELEASE="$IMAGE_VERSION"
-DISTRIB_DESCRIPTION="AstrOS"
-EOF
-
 # https://wiki.archlinux.org/title/COSMIC#SSH_AUTH_SOCK_not_set
 systemctl enable --global gcr-ssh-agent.socket flatpak-update.timer
 
