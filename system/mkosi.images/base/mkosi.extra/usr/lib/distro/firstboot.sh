@@ -92,9 +92,10 @@ usermod -aG wheel "$USERNAME"
 echo "$USERNAME:$PASS1" | chpasswd
 
 # luks recovery key
-## enroll a recovery key, unlocked via the already-enrolled TPM2 device
-if RECOVERY_KEY=$(systemd-cryptenroll --recovery-key --unlock-tpm2-device=auto \
-  /dev/disk/by-label/luks-AstrOS-root 2>/dev/null); then
+## enrolled in the initrd by the systemd-cryptenroll-firstboot.service drop-in
+if [[ -s /run/distro-recovery-key ]]; then
+  RECOVERY_KEY=$(</run/distro-recovery-key)
+  rm -f /run/distro-recovery-key
 
   ## build the message: a note, the QR code, then the key in plain text
   QR=$(qrencode -t UTF8 "$RECOVERY_KEY")
@@ -111,7 +112,7 @@ ${RECOVERY_KEY}"
     "$MESSAGE" 0 0
 else
   whiptail --backtitle "$BACKTITLE" --msgbox \
-    "Failed to enroll a recovery key for the encrypted disk. Please do it manually." 0 0
+    "No recovery key was enrolled for the encrypted disk. REACH OUT TO US AND DO NOT USE THIS SYSTEM IN PRODUCTION!" 0 0
 fi
 
 # done
