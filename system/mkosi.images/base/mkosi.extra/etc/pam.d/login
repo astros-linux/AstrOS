@@ -7,5 +7,5 @@ auth       include      system-local-login
 auth       optional     pam_oo7.so
 account    include      system-local-login
 session    include      system-local-login
-session    optional     pam_oo7.so
+session    optional     pam_oo7.so auto_start
 password   include      system-local-login
