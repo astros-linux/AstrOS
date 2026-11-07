@@ -15,6 +15,7 @@ enable systemd-timesyncd.service
 enable avahi-daemon.service
 enable cups.service
 enable apparmor.service
+enable switcheroo-control.service
 
 # the following services are enabled via separated .conf files. E.g. /usr/lib/systemd/system/sysinit.target.d/10-extensions.conf
 disable systemd-confext.service
