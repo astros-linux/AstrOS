@@ -1,5 +1,8 @@
 [Unit]
 Description=Installer
+# requires the images partition to be mounted
+Wants=images.mount
+After=images.mount
 # take over the console before the login prompt appears.
 After=systemd-user-sessions.service
 Before=getty@tty1.service
