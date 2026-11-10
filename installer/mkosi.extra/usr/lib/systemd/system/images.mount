@@ -4,7 +4,7 @@ Description=Installer image mount
 [Mount]
 What=/dev/disk/by-partlabel/images
 Where=/images
-Type=btrfs
+Type=erofs
 Options=ro,noatime,nofail
 
 [Install]

@@ -20,29 +20,6 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-# keymap
-## create list
-mapfile -t KEYMAP_LIST < <(localectl list-keymaps)
-KEYMAP_MENU=()
-for km in "${KEYMAP_LIST[@]}"; do
-  KEYMAP_MENU+=("$km" "")
-done
-
-## show list and set keymap
-KEYMAP=""
-while true; do
-  KEYMAP=$(whiptail --backtitle "$BACKTITLE" --title "Keymap" --menu \
-    "Select a console keymap.\nType the first letter of a layout to jump to it." 0 0 0 \
-    "${KEYMAP_MENU[@]}" 3>&1 1>&2 2>&3) || KEYMAP=""
-  if [[ -z "$KEYMAP" ]]; then
-    whiptail --backtitle "$BACKTITLE" --title "Keymap" --msgbox \
-      "A keymap selection is required.\nPlease try again." 0 0
-    continue
-  fi
-  localectl set-keymap "$KEYMAP"
-  break
-done
-
 # user
 ## username
 USERNAME=""
