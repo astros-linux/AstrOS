@@ -22,3 +22,8 @@ systemctl enable --global gcr-ssh-agent.socket oo7-daemon.service flatpak-update
 # disable soft-reboot (base /etc is a confext)
 ln -sf /dev/null /usr/lib/systemd/system/soft-reboot.target
 ln -sf /dev/null /usr/lib/systemd/system/systemd-soft-reboot.service
+
+# distrobox 1.8.2.5: since podman 6.2, podman info includes crun's features JSON
+# which contains "org.opencontainers.runc.checkpoint.enabled"
+# thus distrobox misdetects crun as runc
+sed -i "s|info 2> /dev/null \| grep -q runc|info --format '{{.Host.OCIRuntime.Name}}' 2> /dev/null \| grep -q runc|" /usr/bin/distrobox-create
